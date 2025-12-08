@@ -10,18 +10,15 @@ in
   home.username = user;
   home.homeDirectory = homeDir;
   home.stateVersion = "25.11"; # Current channel
-  
+
   # home-wide programs
   home.packages = with pkgs; [
-	obsidian
-	alacritty # with zsh
-	neovim
-	
-	# -- GNOME related --
-	gnome-tweaks
-	# System themes
-	gruvbox-plus-icons
-	bibata-cursors
+    obsidian
+
+    # -- GNOME related --
+    gnome-tweaks
+    gruvbox-plus-icons
+    bibata-cursors
   ];
 
   # Alacritty setup
@@ -34,16 +31,41 @@ in
 
   # TODO: vscode setup
 
-  # TODO: neovim setup
-  
-  # Configurations for Zsh: the default shell for this home config  
+  # neovim setup for Nix code editing
+  programs.neovim = {
+    enable = true;
+
+    plugins = with pkgs.vimPlugins; [
+      nvim-lspconfig
+    ];
+
+    extraConfig = ''
+      lua << EOF
+        vim.lsp.config("nixd", {
+          cmd = { "nixd" },
+          settings = {
+            nixd = {
+              nixpkgs = {
+                expr = "import <nixpkgs> {}"
+              },
+              formatting = {
+                command = { "nixfmt" }
+              }
+            }
+          }
+        })
+      EOF
+    '';
+  };
+
+  # Configurations for Zsh: the default shell for this home config
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      cdc  = "cd /etc/nixos";
+      cdc = "cd /etc/nixos";
       update = "sudo nixos-rebuild switch";
     };
   };
@@ -51,10 +73,13 @@ in
   # Configurations for Git and system config managemente
   programs.git = {
     enable = true;
-    userName = "Pixayo";
-    userEmail = "kaio.rodrigo729@gmail.com";
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Pixayo";
+        email = "kaio.rodrigo729@gmail.com";
+      };
+
       init.defaultBranch = "main";
       safe.directory = [ configDir ];
     };

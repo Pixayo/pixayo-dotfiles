@@ -5,12 +5,12 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      <home-manager/nixos>
-    ];
-  
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    <home-manager/nixos>
+  ];
+
   # Home manager setup
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
@@ -27,8 +27,11 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable Flakes and nix commands like "nix profile"
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Enable zsh system-wide (required even with local declaration)
   programs.zsh.enable = true;
 
@@ -55,27 +58,46 @@
     LC_PAPER = "pt_BR.UTF-8";
     LC_TELEPHONE = "pt_BR.UTF-8";
     LC_TIME = "pt_BR.UTF-8";
-  }; 
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable and modify the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  
-  # Editing the gnome environment.
-  programs.dconf.enable = true;
-  environment.gnome.excludePackages = with pkgs; [
-	# Disable some core aplications from the gnome environment
-	baobab cheese eog epiphany
-	gedit simple-scan totem yelp
-	evince file-roller geary seahorse
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  # programs.dconf.enable = true; # TODO: learn how to use dconf
 
-	gnome-calendar gnome-characters gnome-clocks gnome-logs
-	gnome-font-viewer gnome-maps gnome-music gnome-photos
-	gnome-weather gnome-disk-utility gnome-connections gnome-contacts
-	gnome-tour gnome-software
+  # Editing the gnome environment.
+  environment.gnome.excludePackages = with pkgs; [
+    # Disable some core aplications from the gnome environment
+    baobab
+    cheese
+    eog
+    epiphany
+    gedit
+    simple-scan
+    totem
+    yelp
+    evince
+    file-roller
+    geary
+    seahorse
+
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-logs
+    gnome-font-viewer
+    gnome-maps
+    gnome-music
+    gnome-photos
+    gnome-weather
+    gnome-disk-utility
+    gnome-connections
+    gnome-contacts
+    gnome-tour
+    gnome-software
   ];
 
   # Configure keymap in X11
@@ -113,8 +135,11 @@
   users.users.kaio = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-    # packages = with pkgs; []; # Useless with home manager
+
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   # Enable steam services.
@@ -129,7 +154,7 @@
 
   # Enable flatpak services.
   services.flatpak.enable = true;
-  
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -138,22 +163,39 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  	vim wget git
-  	
-	# Languages / environments / tools ...
-	jdk21 maven gradle # Java 
-	python3            # Python 
-	clang              # C 
-	
-  ] ++ (with gnomeExtensions; [ 
-  	# TODO: find a better place for gnome extensions
-  	dash-to-dock user-themes hide-top-bar
-  ]);
+  environment.systemPackages =
+    with pkgs;
+    [
+      vim
+      wget
+      git
+
+      # Nix coding
+      nixfmt
+      nixd
+
+      # Java
+      jdk21
+      maven
+      gradle 
+
+      # Python
+      python3 
+
+      # C
+      clang
+
+    ]
+    ++ (with gnomeExtensions; [
+      # TODO: find a better place for gnome extensions
+      dash-to-dock
+      user-themes
+      hide-top-bar
+    ]);
 
   # Set vim as the default editor
   environment.variables.EDITOR = "vim";
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
