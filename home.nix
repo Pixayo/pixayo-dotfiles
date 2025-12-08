@@ -29,13 +29,7 @@ in
     enable = true;
     theme = "gruvbox_dark";
 
-    settings = {
-      window = {
-        opacity = 0.80;
-        dynamic_padding = true;
-        padding = { x = 6; y = 6; };
-      };
-    };
+    settings.window.opacity = 0.85;
   };
 
   # TODO: vscode setup
@@ -47,6 +41,11 @@ in
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      cdc  = "cd /etc/nixos";
+      update = "sudo nixos-rebuild switch";
+    };
   };
 
   # Configurations for Git and system config managemente
@@ -57,12 +56,7 @@ in
 
     extraConfig = {
       init.defaultBranch = "main";
-      safe.directory = [
-        configDir
-        "${homeDir}/.dotfiles"
-	# ".dotfiles" is a directory for diverse system configs experiments
-	# FIXME: it's not created by default and will result in erro.
-      ];
+      safe.directory = [ configDir ];
     };
   };
 }

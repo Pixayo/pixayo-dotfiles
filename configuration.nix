@@ -114,9 +114,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    	# Don't actually install programs.
-    ];
+    # packages = with pkgs; []; # Useless with home manager
   };
 
   # Enable steam services.
@@ -143,17 +141,18 @@
   environment.systemPackages = with pkgs; [
   	vim wget git
   	
-	# -- Java related ---
-	jdk21 maven gradle
+	# Languages / environments / tools ...
+	jdk21 maven gradle # Java 
+	python3            # Python 
+	clang              # C 
 	
   ] ++ (with gnomeExtensions; [ 
   	# TODO: find a better place for gnome extensions
   	dash-to-dock user-themes hide-top-bar
   ]);
-  
-  # Auto update system
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = true;
+
+  # Set vim as the default editor
+  environment.variables.EDITOR = "vim";
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -180,6 +179,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment? No, I didn't!
 
 }
