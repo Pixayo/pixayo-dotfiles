@@ -4,7 +4,6 @@ let
   # Local atributes for better readability and managemente
   user = "kaio"; # same as user directory
   homeDir = "/home/${user}";
-  configDir = "/etc/nixos";
   systemVer = "25.11";
 in
 {
@@ -39,10 +38,26 @@ in
     enable = true;
     package = pkgs.vscodium;
 
-    profile.default = {
+    profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         jdinhlife.gruvbox
       ];
+
+      userSettings = {
+        # TODO I need to edit more thins
+        "nix.serverPath" = "nixd";
+        "nix.enableLanguageServer" = true;
+
+        "nix.serverSettings" = {
+          nixd = {
+            formatting = {
+              command = [ "nixfmt" ];
+            };
+
+            options = { };
+          };
+        };
+      };
     };
   };
 
@@ -68,7 +83,6 @@ in
         name = "Pixayo";
         email = "kaio.rodrigo729@gmail.com";
       };
-
     };
   };
 
