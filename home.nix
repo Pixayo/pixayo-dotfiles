@@ -5,11 +5,18 @@ let
   user = "kaio"; # same as user directory
   homeDir = "/home/${user}";
   configDir = "/etc/nixos";
+  systemVer = "25.11";
 in
 {
-  home.username = user;
-  home.homeDirectory = homeDir;
-  home.stateVersion = "25.11"; # Current channel
+  home = { 
+    username = user;
+    homeDirectory = homeDir;
+    stateVersion = systemVer;
+  };
+
+  imports = [
+
+  ];
 
   # home-wide programs
   home.packages = with pkgs; [
@@ -27,9 +34,17 @@ in
     theme = "gruvbox_dark";
 
     settings.window.opacity = 0.85;
+  programs.vscodium = {
+    enable = true;
   };
 
-  # TODO: vscode setup
+  # TODO: vscod-d VSCODIUM!!! setup
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscodium;
+
+    # extensions = [];
+  };
 
   # Configurations for Zsh: the default shell for this home config
   programs.zsh = {
@@ -56,4 +71,8 @@ in
 
     };
   };
+
+  programs.home-manager.enable = true;
+  systemd.user.startServices = "sd-switch";
+
 }
