@@ -156,9 +156,8 @@
     ++ (with gnomeExtensions; [
       # TODO: find a better place for gnome extensions
       dash-to-dock
-      user-themes
       hide-top-bar
-      open-bar
+      user-themes
     ]);
 
   # Enable steam services.

@@ -75,13 +75,12 @@ in
     enable = true;
 
     settings = {
-      user = {
+     init.defaultBranch = "main";
+     user = {
         name = "Pixayo";
         email = "kaio.rodrigo729@gmail.com";
       };
 
-      init.defaultBranch = "main";
-      safe.directory = [ configDir ];
     };
   };
 }
