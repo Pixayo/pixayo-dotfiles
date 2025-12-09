@@ -31,33 +31,6 @@ in
 
   # TODO: vscode setup
 
-  # neovim setup for Nix code editing
-  programs.neovim = {
-    enable = true;
-
-    plugins = with pkgs.vimPlugins; [
-      nvim-lspconfig
-    ];
-
-    extraConfig = ''
-      lua << EOF
-        vim.lsp.config("nixd", {
-          cmd = { "nixd" },
-          settings = {
-            nixd = {
-              nixpkgs = {
-                expr = "import <nixpkgs> {}"
-              },
-              formatting = {
-                command = { "nixfmt" }
-              }
-            }
-          }
-        })
-      EOF
-    '';
-  };
-
   # Configurations for Zsh: the default shell for this home config
   programs.zsh = {
     enable = true;
@@ -75,8 +48,8 @@ in
     enable = true;
 
     settings = {
-     init.defaultBranch = "main";
-     user = {
+      init.defaultBranch = "main";
+      user = {
         name = "Pixayo";
         email = "kaio.rodrigo729@gmail.com";
       };
