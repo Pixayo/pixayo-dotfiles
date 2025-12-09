@@ -8,15 +8,13 @@ let
   systemVer = "25.11";
 in
 {
-  home = { 
+  home = {
     username = user;
     homeDirectory = homeDir;
     stateVersion = systemVer;
   };
 
-  imports = [
-
-  ];
+  # imports = [];
 
   # home-wide programs
   home.packages = with pkgs; [
@@ -34,8 +32,6 @@ in
     theme = "gruvbox_dark";
 
     settings.window.opacity = 0.85;
-  programs.vscodium = {
-    enable = true;
   };
 
   # TODO: vscod-d VSCODIUM!!! setup
@@ -43,9 +39,11 @@ in
     enable = true;
     package = pkgs.vscodium;
 
-    extensions = with pkgs.vscode-extensions; [
-      jdinhlife.gruvbox
-    ];
+    profile.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jdinhlife.gruvbox
+      ];
+    };
   };
 
   # Configurations for Zsh: the default shell for this home config
