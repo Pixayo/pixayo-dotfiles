@@ -43,7 +43,9 @@ in
     enable = true;
     package = pkgs.vscodium;
 
-    # extensions = [];
+    extensions = with pkgs.vscode-extensions; [
+      jdinhlife.gruvbox
+    ];
   };
 
   # Configurations for Zsh: the default shell for this home config
