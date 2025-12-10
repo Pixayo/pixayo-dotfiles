@@ -23,9 +23,13 @@ in
     obsidian
 
     # -- GNOME related --
-    gnome-tweaks
     gruvbox-plus-icons
     bibata-cursors
+    gnome-tweaks
+
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.hide-top-bar
+    gnomeExtensions.user-themes
   ];
 
   systemd.user.startServices = "sd-switch";

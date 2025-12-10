@@ -116,29 +116,23 @@
     ];
   };
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      vim # CLI text editor
-      wget # CLI tool for retriving web server content
-      git # CLI version control
-      # Nix coding
-      nixfmt
-      nixd
-      # Java
-      jdk21
-      maven
-      gradle
-      # Misc
-      python3
-      clang
-    ]
-    ++ (with gnomeExtensions; [
-      # TODO: find a better place for gnome extensions
-      dash-to-dock
-      hide-top-bar
-      user-themes
-    ]);
+  environment.systemPackages = with pkgs; [
+    vim # CLI text editor
+    wget # CLI tool for retriving web server content
+    git # CLI version control
+    # Gnome
+    dconf-editor
+    # Nix coding
+    nixfmt
+    nixd
+    # Java
+    jdk21
+    maven
+    gradle
+    # Misc
+    python3
+    clang
+  ];
 
   # Enable steam services.
   programs.steam = {
