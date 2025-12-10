@@ -4,7 +4,7 @@ let
   # Local atributes for better readability and managemente
   user = "kaio";
   homeDir = "/home/${user}";
-  systemVer = "25.11";
+  systemVer = "25.11"; # Current active channel
 in
 {
   home = {

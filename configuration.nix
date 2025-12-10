@@ -122,23 +122,16 @@
       vim # CLI text editor
       wget # CLI tool for retriving web server content
       git # CLI version control
-      btop # CLI system monitor
-
       # Nix coding
       nixfmt
       nixd
-
       # Java
       jdk21
       maven
       gradle
-
-      # Python
+      # Misc
       python3
-
-      # C
       clang
-
     ]
     ++ (with gnomeExtensions; [
       # TODO: find a better place for gnome extensions
