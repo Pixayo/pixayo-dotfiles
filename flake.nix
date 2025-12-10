@@ -1,8 +1,8 @@
 {
-  description = "Nixos config flake";
+  description = "Simple config flake for easy system update";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
