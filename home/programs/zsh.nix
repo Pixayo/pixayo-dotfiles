@@ -8,7 +8,7 @@
 
     shellAliases = {
       cdc = "cd /etc/nixos";
-      update = "sudo nixos-rebuild switch";
+      update = "sudo nixos-rebuild switch --flake /etc/nixos#default";
     };
   };
 }
