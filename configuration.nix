@@ -1,12 +1,7 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     <home-manager/nixos>
   ];
@@ -53,7 +48,7 @@
   # Enable and modify the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  programs.dconf.enable = true; # TODO: learn how to use dconf
+  programs.dconf.enable = true;
 
   # Editing the gnome environment.
   environment.gnome.excludePackages = with pkgs; [
@@ -70,7 +65,7 @@
     geary
     seahorse
 
-    # Disable some core aplications from the gnome environment
+    # Disable some core aplications
     gnome-calendar
     gnome-characters
     gnome-clocks
@@ -110,12 +105,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    media-session.enable = true;
   };
 
   users.users.kaio = {
@@ -128,14 +118,13 @@
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages =
     with pkgs;
     [
-      vim
-      wget
-      git
+      vim # CLI text editor
+      wget # CLI tool for retriving web server content
+      git # CLI version control
+      btop # CLI system monitor
 
       # Nix coding
       nixfmt
@@ -170,17 +159,15 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  # Enable flatpak services.
+  # Set vim as the default editor
+  environment.variables.EDITOR = "vim";
+
   services.flatpak.enable = true;
 
-  # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Set vim as the default editor
-  environment.variables.EDITOR = "vim";
 
   # Enable Flakes and nix commands like "nix profile"
   nix.settings.experimental-features = [
@@ -195,7 +182,6 @@
     options = "--delete-older-than 7d";
   };
 
-  # No need to change this.
   system.stateVersion = "25.05";
 
 }

@@ -12,7 +12,7 @@ in
     homeDirectory = homeDir;
     stateVersion = systemVer;
   };
-  
+
   # Modules
   imports = [
     ./programs # Programs that need more atention and care! :heart:
@@ -29,7 +29,7 @@ in
   ];
 
   systemd.user.startServices = "sd-switch";
-  
+
   # Activate home-manager... inside home-manager!
   programs.home-manager.enable = true;
 
