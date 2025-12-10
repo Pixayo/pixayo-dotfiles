@@ -3,7 +3,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    <home-manager/nixos>
   ];
 
   # Home manager setup
