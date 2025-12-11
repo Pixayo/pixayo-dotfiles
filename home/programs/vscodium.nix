@@ -8,13 +8,15 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         jdinhlife.gruvbox
+        jnoortheen.nix-ide
       ];
 
-      userSettings = {
-        # TODO I need to edit more thins
+      userSettings = {        
+        "editor.minimap.enabled" = false;
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
+
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
-
         "nix.serverSettings" = {
           nixd = {
             formatting = {
