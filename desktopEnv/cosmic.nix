@@ -16,6 +16,6 @@ in
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
 
-    # You can add a "cosmicConfig.nix" on "./home/modules/configs" to customize your DE locally.
+    # You can add a "cosmicConfig.nix" on "./home/modules/de-configs" to customize your DE locally.
   };
 }

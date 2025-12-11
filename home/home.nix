@@ -2,7 +2,7 @@
 
 let
   DE = pixayo.desktop;
-  pathToConfig = ./modules/configs/${DE}Config.nix;
+  pathToConfig = ./modules/de-configs/${DE}Config.nix;
   configFileExist = builtins.pathExists pathToConfig;
 in 
 {
