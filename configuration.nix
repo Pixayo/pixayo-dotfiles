@@ -6,11 +6,6 @@
     ./modules/DE/gnome.nix # Comment to disable GNOME
   ];
 
-  # Home manager setup
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.users.kaio = import ./home/home.nix;
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
