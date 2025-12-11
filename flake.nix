@@ -11,14 +11,18 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
-  # let
-    
-  # in
+  let
+    pixayo = {
+      user = "kaio";
+      host = "nixos";
+      desktop = "cosmic"; # options: gnome, cosmic
+    }
+  in
   {
 
     nixosConfigurations = {
       kaio = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs pixayo; };
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.default
@@ -26,7 +30,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.kaio = ./home/home.nix;
+              users.${pixayo.user} = ./home/home.nix;
             };
           }
         ];
