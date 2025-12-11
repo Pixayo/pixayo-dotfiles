@@ -3,8 +3,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./desktopEnv/gnome.nix # Comment to disable GNOME
+    ./desktopEnv
   ];
+
+  desktopEnv.gnome.enable = true; 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

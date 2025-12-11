@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
+let 
+  cfg = config.desktopEnv.gnome;
+in 
 {
+  cfg.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
+  config = lib.mkIf cfg.enable 
+  {
   # System side ---
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -98,6 +104,7 @@
         show-desktop = [ "<super>d" ];
       };
     };
+  };
   };
 
 }
