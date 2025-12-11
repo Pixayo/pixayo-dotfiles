@@ -1,12 +1,16 @@
-DesktopEnv is a directory for **DE-specific configuration files**.
+This directory contains **desktop-environment-specific** configuration modules..
 
-You can change what DE will be build with the `desktop` parameter, declared in
-`flake.nix`. Note that the only options available are the ones present on this directory.
+The active desktop environment is selected via the `desktop` parameter in
+`flake.nix`. Only the DEs present in this directory are available.
+
+If you want to add a different DE, use the **COSMIC** implementation as a template, 
+and be aware that the main configuration file (`configuration.nix`) enables any DE 
+passed to `desktop` by default.
 
 Current options:
-- GNOME (custom setup)
-- COSMIC (basic setup)
+- **GNOME** (custom setup)
+- **COSMIC** (basic setup)
 
 Planned DE implementations:
-- CINNAMON 
-- HYPRLAND (not sure)
+- **CINNAMON** 
+- **HYPRLAND** (not sure)
