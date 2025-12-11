@@ -1,5 +1,16 @@
-{ pkgs, pixayo, ... }:
+{ pkgs, lib, pixayo, ... }:
 
+let
+  DE = pixayo.desktop;
+  path = ./modules/configs/${DE}Config.nix;
+  configFileExist = builtins.pathExists path;
+
+  cfg =
+    if configFileExist then
+      import path
+    else
+      lib.warn "Warning: Config file for ${DE} doesn't exist -> (${path})" {};
+in 
 {
 
   home = {
@@ -8,11 +19,11 @@
     stateVersion = "25.11";
   };
   programs.home-manager.enable = true;
+  
+  imports = [ 
+    ./modules 
+  ] ++ lib.optional configFileExist path;
 
-  # Modules
-  imports = [
-    ./modules # Programs that need more atention and care! :heart:
-  ];
 
   # programs with no special configuration -> Bastard childs!
   home.packages = with pkgs; [

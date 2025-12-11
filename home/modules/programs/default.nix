@@ -1,5 +1,5 @@
 {
-  # Work as a thin lair of abstraction for the "imports" in home.nix
+  # Work as a thin lair of abstraction
   imports = [
     ./alacritty.nix
     ./vscodium.nix
