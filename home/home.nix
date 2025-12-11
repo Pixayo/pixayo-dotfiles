@@ -14,6 +14,7 @@ in
   };
   programs.home-manager.enable = true;
   
+  # Import every module in "modules" besides DE-specific "configs" (if not present)
   imports = [ 
     ./modules 
   ] ++ lib.optional configFileExist pathToConfig;
