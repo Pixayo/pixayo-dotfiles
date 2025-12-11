@@ -10,26 +10,28 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, ... }@inputs:
-    {
+  outputs = { self, nixpkgs, ... }@inputs:
+  # let
+    
+  # in
+  {
 
-      nixosConfigurations = {
-        kaio = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./configuration.nix
-            inputs.home-manager.nixosModules.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.kaio = ./home/home.nix;
-              };
-            }
-          ];
-        };
+    nixosConfigurations = {
+      kaio = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kaio = ./home/home.nix;
+            };
+          }
+        ];
       };
-
     };
+
+  };
 }
