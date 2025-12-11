@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+
   # System side ---
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -12,7 +13,7 @@
   services.gnome.core-developer-tools.enable = false;
   services.gnome.games.enable = false;
 
-  environment.gnome.excludePackages = with pkgs; [ 
+  environment.gnome.excludePackages = with pkgs; [
     gnome-characters
     gnome-clocks
     gnome-logs
@@ -27,12 +28,12 @@
     gnome-tour
     gnome-software
   ];
-  
+
   # Restore some basic applications
   environment.systemPackages = with pkgs; [
     gnome-control-center # Gnome settings
     gnome-calendar
-    gnome-keyring 
+    gnome-keyring
     evince # Doc reader
     loupe # Image viewer
     nautilus # File explorer
@@ -47,7 +48,7 @@
       pkgs.gnomeExtensions.hide-top-bar
       pkgs.gnomeExtensions.user-themes
     ];
-    
+
     # TIP: use dconf-editor
     dconf.settings = {
       "org/gnome/shell" = {
@@ -98,4 +99,5 @@
       };
     };
   };
+
 }

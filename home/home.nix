@@ -13,7 +13,7 @@ in
 
   # Modules
   imports = [
-    ./programs # Programs that need more atention and care! :heart:
+    ./modules # Programs that need more atention and care! :heart:
   ];
 
   # programs with no special configuration -> Bastard childs!

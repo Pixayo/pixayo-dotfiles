@@ -19,7 +19,7 @@
       # RUN: rm ~/.config/VSCodium/User/settings.json
       # OR:  rm ~/.config/VSCode/User/settings.json
 
-      # userSettings = {        
+      # userSettings = {
       #   "extensions.autoCheckUpdates" = true;
 
       #   "workbench.colorTheme" = "Gruvbox Dark Medium";
