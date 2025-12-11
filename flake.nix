@@ -30,6 +30,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              extraSpecialArgs = { inherit pixayo; };
               users.${pixayo.user} = ./home/home.nix;
             };
           }
