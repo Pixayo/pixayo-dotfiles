@@ -16,6 +16,9 @@
       user = "kaio";
       host = "nixos";
       desktop = "gnome"; # options: gnome, cosmic
+
+      # GNOME -> My first DE with NixOs
+      # COSMIC -> First switch to another DE (bad performance)
     };
   in
   {
