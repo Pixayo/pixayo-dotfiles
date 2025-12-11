@@ -16,7 +16,7 @@
       user = "kaio";
       host = "nixos";
       desktop = "cosmic"; # options: gnome, cosmic
-    }
+    };
   in
   {
 
