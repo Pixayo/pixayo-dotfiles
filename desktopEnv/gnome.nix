@@ -6,6 +6,10 @@ in
 {
   options.desktopEnv.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
+  # TODO: Divide system-side setup from home-side setup like:
+  # - ./desktop/gnome.nix (system-side)
+  # - ./home/modules/desktop/gnomeConfig.nix (home-side)
+
   config = lib.mkIf cfg.enable 
   {
   # System side ---

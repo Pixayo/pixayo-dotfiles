@@ -1,13 +1,17 @@
-{ config, pkgs, lib,  ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
-let 
+let
   cfg = config.desktopEnv.cosmic;
-in 
+in
 {
   options.desktopEnv.cosmic.enable = lib.mkEnableOption "Enable COSMIC desktop environment";
 
-  config = lib.mkIf cfg.enable 
-  {
+  config = lib.mkIf cfg.enable {
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
   };
