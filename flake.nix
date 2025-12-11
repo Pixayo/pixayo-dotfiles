@@ -15,7 +15,7 @@
     pixayo = {
       user = "kaio";
       host = "nixos";
-      desktop = "cosmic"; # options: gnome, cosmic
+      desktop = "gnome"; # options: gnome, cosmic
     };
   in
   {
