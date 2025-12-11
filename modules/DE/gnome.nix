@@ -12,7 +12,6 @@
   services.gnome.games.enable = false;
 
   environment.gnome.excludePackages = with pkgs; [ 
-    gnome-calendar
     gnome-characters
     gnome-clocks
     gnome-logs
@@ -26,6 +25,16 @@
     gnome-contacts
     gnome-tour
     gnome-software
+  ];
+  
+  # Restore some basic applications
+  environment.systemPackages = with pkgs; [
+    gnome-control-center # Gnome settings
+    gnome-calendar
+    gnome-keyring 
+    evince # Doc reader
+    loupe # Image viewer
+    nautilus # File explorer
   ];
 
 }
