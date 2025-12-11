@@ -4,7 +4,7 @@ let
   cfg = config.desktopEnv.gnome;
 in 
 {
-  cfg.enable = lib.mkEnableOption "Enable GNOME desktop environment";
+  options.desktopEnv.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
   config = lib.mkIf cfg.enable 
   {
