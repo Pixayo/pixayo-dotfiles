@@ -15,7 +15,7 @@
       # Git
       gl = "git log";
       gs = "git status";
-      gsave = "git add -A && git commit -m 'save point commit!'";
+      gsave = "git add -A && git commit -m 'Testing! generic commit'";
     };
   };
 }
