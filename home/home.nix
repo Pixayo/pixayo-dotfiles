@@ -2,14 +2,8 @@
 
 let
   DE = pixayo.desktop;
-  path = ./modules/configs/${DE}Config.nix;
-  configFileExist = builtins.pathExists path;
-
-  cfg =
-    if configFileExist then
-      import path
-    else
-      lib.warn "Warning: Config file for ${DE} doesn't exist -> (${path})" {};
+  pathToConfig = ./modules/configs/${DE}Config.nix;
+  configFileExist = builtins.pathExists pathToConfig;
 in 
 {
 
@@ -22,7 +16,7 @@ in
   
   imports = [ 
     ./modules 
-  ] ++ lib.optional configFileExist path;
+  ] ++ lib.optional configFileExist pathToConfig;
 
 
   # programs with no special configuration -> Bastard childs!
