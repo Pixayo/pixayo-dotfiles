@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 let
-  # Local atributes for better readability and managemente
   user = "kaio";
   homeDir = "/home/${user}";
-  systemVer = "25.11"; # Current active channel
+  systemVer = "25.11";
+  DE = "gnome";
 in
 {
   home = {
@@ -22,17 +22,9 @@ in
   home.packages = with pkgs; [
     obsidian
 
-    # -- GNOME related --
     gruvbox-plus-icons
     bibata-cursors
-    gnome-tweaks
-
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.hide-top-bar
-    gnomeExtensions.user-themes
   ];
-
-  systemd.user.startServices = "sd-switch";
 
   # Activate home-manager... inside home-manager!
   programs.home-manager.enable = true;

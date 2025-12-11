@@ -11,22 +11,34 @@
         jnoortheen.nix-ide
       ];
 
-      userSettings = {        
-        "editor.minimap.enabled" = false;
-        "workbench.colorTheme" = "Gruvbox Dark Medium";
+      # Only use "userSettings" if you want to manager your configs from this
+      # module, every change will not be saved if done outside of this config
+      # file.
 
-        "nix.serverPath" = "nixd";
-        "nix.enableLanguageServer" = true;
-        "nix.serverSettings" = {
-          nixd = {
-            formatting = {
-              command = [ "nixfmt" ];
-            };
+      # To remove the settings.json build by NixOs:
+      # RUN: rm ~/.config/VSCodium/User/settings.json
+      # OR:  rm ~/.config/VSCode/User/settings.json
 
-            options = { };
-          };
-        };
-      };
+      # userSettings = {        
+      #   "extensions.autoCheckUpdates" = true;
+
+      #   "workbench.colorTheme" = "Gruvbox Dark Medium";
+      #   "workbench.iconTheme" = "material-icon-theme";
+
+      #   "nix.serverPath" = "nixd";
+      #   "nix.enableLanguageServer" = true;
+      #   "nix.serverSettings" = {
+      #     nixd = {
+      #       formatting = {
+      #         command = [ "nixfmt" ];
+      #       };
+
+      #       options = { };
+      #     };
+      #   };
+
+      #   "editor.minimap.enabled" = false;
+      # };
     };
   };
 }

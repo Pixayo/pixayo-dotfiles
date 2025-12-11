@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./modules/DE/gnome.nix # Comment to disable GNOME
   ];
 
   # Home manager setup
@@ -44,46 +45,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable and modify the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  programs.dconf.enable = true;
-
-  # Editing the gnome environment.
-  environment.gnome.excludePackages = with pkgs; [
-    baobab
-    cheese
-    eog
-    epiphany
-    gedit
-    simple-scan
-    totem
-    yelp
-    evince
-    file-roller
-    geary
-    seahorse
-
-    # Disable some core aplications
-    gnome-calendar
-    gnome-characters
-    gnome-clocks
-    gnome-logs
-    gnome-font-viewer
-    gnome-maps
-    gnome-music
-    gnome-photos
-    gnome-weather
-    gnome-disk-utility
-    gnome-connections
-    gnome-contacts
-    gnome-tour
-    gnome-software
-  ];
-
-  # Enable zsh system-wide (required even with local declaration)
-  programs.zsh.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "br";
@@ -120,8 +81,6 @@
     vim # CLI text editor
     wget # CLI tool for retriving web server content
     git # CLI version control
-    # Gnome
-    dconf-editor
     # Nix coding
     nixfmt
     nixd
@@ -134,6 +93,12 @@
     clang
   ];
 
+  # Set vim as the default editor
+  environment.variables.EDITOR = "vim";
+
+  # Enable zsh system-wide (required even with local declaration)
+  programs.zsh.enable = true;
+
   # Enable steam services.
   programs.steam = {
     enable = true;
@@ -144,23 +109,17 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  # Set vim as the default editor
-  environment.variables.EDITOR = "vim";
-
   services.flatpak.enable = true;
 
   programs.firefox.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Enable Flakes and nix commands like "nix profile"
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  # Automate garbage colletion
   nix.gc = {
     automatic = true;
     dates = "weekly";

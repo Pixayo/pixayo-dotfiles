@@ -1,15 +1,33 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = [
+    pkgs.gnome-tweaks
+    pkgs.dconf-editor
+  ];
+
+  programs.gnome-shell = {
+    enable = true;
+    extensions = [
+      pkgs.gnomeExtensions.dash-to-dock
+      pkgs.gnomeExtensions.hide-top-bar
+      pkgs.gnomeExtensions.user-theme
+    ];
+  };
+  
   # TIP: use dconf-editor
   dconf.settings = {
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = "disabled";
+
       enabled-extensions = [
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
-        "dash-to-dock@micxgx.gmail.com"
-        "hidetopbar@mathieu.bidon.ca"
+        # Put UUIDs of extensions that you want to enable here.
+        # If the extension you want to enable is packaged in nixpkgs,
+        # you can easily get its UUID by accessing its extensionUuid
+        # field.
+        pkgs.gnomeExtensions.user-theme.extensionUuid
+        pkgs.gnomeExtensions.dash-to-dock.extensionUuid
+        pkgs.gnomeExtensions.hide-top-bar.extensionUuid
       ];
     };
     "org/gnome/shell/extensions/hidetopbar" = {
