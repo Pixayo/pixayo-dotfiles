@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pixayo, ... }:
 
 {
   imports = [
@@ -6,7 +6,7 @@
     ./desktopEnv
   ];
 
-  desktopEnv.gnome.enable = true; 
+  desktopEnv.${pixayo.desktop}.enable = true; 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

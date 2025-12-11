@@ -1,14 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, pixayo, ... }:
 
-let
-  user = "kaio";
-  homeDir = "/home/${user}";
-  systemVer = "25.11";
-  DE = "gnome";
-in
 {
 
-  home.stateVersion = "25.11";
+  home = {
+    username = pixayo.user;
+    homeDirectory = "/home/${pixayo.user}";
+    stateVersion = "25.11";
+  };
   programs.home-manager.enable = true;
 
   # Modules
