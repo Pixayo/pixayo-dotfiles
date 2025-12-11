@@ -7,26 +7,21 @@ let
   DE = "gnome";
 in
 {
-  home = {
-    username = user;
-    homeDirectory = homeDir;
-    stateVersion = systemVer;
-  };
+
+  home.stateVersion = "25.11";
+  programs.home-manager.enable = true;
 
   # Modules
   imports = [
     ./programs # Programs that need more atention and care! :heart:
   ];
 
-  # home-wide programs -> Bastard childs!
+  # programs with no special configuration -> Bastard childs!
   home.packages = with pkgs; [
     obsidian
 
     gruvbox-plus-icons
     bibata-cursors
   ];
-
-  # Activate home-manager... inside home-manager!
-  programs.home-manager.enable = true;
 
 }

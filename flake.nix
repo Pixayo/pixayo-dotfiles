@@ -12,12 +12,21 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
 
-    nixosConfigurations.kaio = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+    nixosConfigurations = {
+      kaio = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.kaio = ./home/home.nix;
+            };
+          }
+        ];
+      };
     };
 
   };
