@@ -6,6 +6,8 @@ in
 {
   options.configs.gnomeConfig.enable = lib.mkEnableOption "Enable custom GNOME configuration";
 
+  assert false; "Debug, if you see it, gnomeConfig.nix was loaded!"
+
   config = lib.mkIf cfg.enable
   {
   home.packages = [
