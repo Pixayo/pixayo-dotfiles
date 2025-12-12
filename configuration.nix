@@ -69,7 +69,7 @@
     pulse.enable = true;
   };
 
-  users.users.kaio = {
+  users.users.${pixayo.user} = {
     isNormalUser = true;
     shell = pkgs.zsh;
 
@@ -79,12 +79,13 @@
     ];
   };
 
+  # System-wide programs
   environment.systemPackages = with pkgs; [
     vim # CLI text editor
     wget # CLI tool for retriving web server content
     git # CLI version control
     # Nix coding
-    nixfmt
+    alejandra
     nixd
     # Java
     jdk21

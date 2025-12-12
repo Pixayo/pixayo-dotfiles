@@ -7,8 +7,15 @@
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
-        jdinhlife.gruvbox
+        # Icons / themes
+        pkief.material-icon-theme
+        jdinhlife.gruvbox 
+
+        # Nix coding
         jnoortheen.nix-ide
+
+        # Web development
+
       ];
 
       # Only use "userSettings" if you want to manager your configs from this
@@ -30,7 +37,7 @@
       #   "nix.serverSettings" = {
       #     nixd = {
       #       formatting = {
-      #         command = [ "nixfmt" ];
+      #         command = [ "alejandra" ];
       #       };
 
       #       options = { };
