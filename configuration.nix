@@ -98,9 +98,10 @@
 
   fonts.packages = with pkgs; [
     # nerd-fonts are a subpackage -> pkgs.nerd-fonts.*
-    # other fonts are installed like -> pkgs.fira-coda
+    # other fonts are installed like -> pkgs.fira-code
     nerd-fonts.jetbrains-mono
-    nerd-fonts.fira-coda
+    nerd-fonts.fira-mono
+    nerd-fonts.fira-code
   ];
 
   environment.variables.EDITOR = "vim";
