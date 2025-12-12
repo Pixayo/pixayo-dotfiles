@@ -1,15 +1,9 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  cfg = config.configs.gnomeConfig;
-in
 {
-  options.configs.gnomeConfig.enable = lib.mkEnableOption "Enable custom GNOME configuration";
 
-  assert false; "Debug, if you see it, gnomeConfig.nix was loaded!"
+  # assert false; "Debug, if you see it, gnomeConfig.nix was loaded!"
 
-  config = lib.mkIf cfg.enable
-  {
   home.packages = [
     pkgs.gnome-tweaks
     # pkgs.dconf-editor
@@ -58,5 +52,4 @@ in
     };
   };
 
-  };
 }
