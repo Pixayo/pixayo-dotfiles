@@ -1,6 +1,7 @@
 { pkgs, lib, pixayo, ... }:
 
 let
+  # Try to find a config file for the current active DE
   DE = pixayo.desktop;
   pathToConfig = ./modules/de-configs/${DE}Config.nix;
   configFileExist = builtins.pathExists pathToConfig;
@@ -19,7 +20,6 @@ in
   imports = [ 
     ./modules 
   ] ++ lib.optional configFileExist pathToConfig;
-
 
   # Place your local programs here!
   home.packages = with pkgs; [

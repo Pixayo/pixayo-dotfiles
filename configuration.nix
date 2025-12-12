@@ -97,18 +97,17 @@
   ];
 
   fonts.packages = with pkgs; [
-    # Individual nerd-fonts can be installed like:
+    # nerd-fonts are a subpackage -> pkgs.nerd-fonts.*
+    # other fonts are installed like -> pkgs.fira-coda
     nerd-fonts.jetbrains-mono
-    nerd-fonts.fire-coda
+    nerd-fonts.fira-coda
   ];
 
-  # Set vim as the default editor
   environment.variables.EDITOR = "vim";
 
   # Enable zsh system-wide (required even with local declaration)
   programs.zsh.enable = true;
 
-  # Enable steam services.
   programs.steam = {
     enable = true;
     extraPackages = [ pkgs.jdk ]; # For games that need Java.

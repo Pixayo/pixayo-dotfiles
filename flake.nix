@@ -22,7 +22,7 @@
     {
 
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        ${pixayo.user} = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs pixayo; };
           modules = [
             ./configuration.nix
