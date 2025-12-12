@@ -20,9 +20,12 @@
 
       # Only use "userSettings" if you want to manager your configs from this
       # module, every change will not be saved if done outside of this config
-      # file.
+      # file. 
+      
+      # Home-manager will not overwrite config files by default and, if changed,
+      # will throw an erro, prevent system rebuild.
 
-      # To remove the settings.json build by NixOs:
+      # To remove "settings.json":
       # RUN: rm ~/.config/VSCodium/User/settings.json
       # OR:  rm ~/.config/VSCode/User/settings.json
 

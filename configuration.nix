@@ -96,6 +96,12 @@
     clang
   ];
 
+  fonts.packages = with pkgs; [
+    # Individual nerd-fonts can be installed like:
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fire-coda
+  ];
+
   # Set vim as the default editor
   environment.variables.EDITOR = "vim";
 
@@ -106,6 +112,7 @@
   programs.steam = {
     enable = true;
     extraPackages = [ pkgs.jdk ]; # For games that need Java.
+
     # Open especific ports in the firewall.
     # remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
@@ -118,17 +125,19 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+    gc = { # Garbage Collector
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.05"; # DO NOT CHANGE!!!
 
 }
