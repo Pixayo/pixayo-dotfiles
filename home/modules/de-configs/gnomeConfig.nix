@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
-{
-
+{pkgs, ...}: {
   # assert false; "Debug, if you see it, gnomeConfig.nix was loaded!"
 
   home.packages = [
@@ -46,10 +43,9 @@
       toolkit-accessibility = true;
     };
     "org/gnome/desktop/wm/keybindings" = {
-      show-desktop = [ "<super>d" ];
-      minimize = [ "<Super>comma" ];
-      close = [ "<Super>q" ];
+      show-desktop = ["<super>d"];
+      minimize = ["<Super>comma"];
+      close = ["<Super>q"];
     };
   };
-
 }

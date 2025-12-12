@@ -3,9 +3,7 @@
   pkgs,
   pixayo,
   ...
-}:
-
-{
+}: {
   imports = [
     ./hardware-configuration.nix
     ./desktopEnv
@@ -111,7 +109,7 @@
 
   programs.steam = {
     enable = true;
-    extraPackages = [ pkgs.jdk ]; # For games that need Java.
+    extraPackages = [pkgs.jdk]; # For games that need Java.
 
     # Open especific ports in the firewall.
     # remotePlay.openFirewall = true;
@@ -131,7 +129,8 @@
       "flakes"
     ];
 
-    gc = { # Garbage Collector
+    gc = {
+      # Garbage Collector
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 7d";
@@ -139,5 +138,4 @@
   };
 
   system.stateVersion = "25.05"; # DO NOT CHANGE!!!
-
 }

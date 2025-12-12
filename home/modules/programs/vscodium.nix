@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -9,19 +7,18 @@
       extensions = with pkgs.vscode-extensions; [
         # Icons / themes
         pkief.material-icon-theme
-        jdinhlife.gruvbox 
+        jdinhlife.gruvbox
 
         # Nix coding
         jnoortheen.nix-ide
 
         # Web development
-
       ];
 
       # Only use "userSettings" if you want to manager your configs from this
       # module, every change will not be saved if done outside of this config
-      # file. 
-      
+      # file.
+
       # Home-manager will not overwrite config files by default and, if changed,
       # will throw an erro, prevent system rebuild.
 
