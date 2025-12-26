@@ -8,7 +8,7 @@
       # NixOS
       cdc = "cd /etc/nixos";
       update = "sudo nix flake update";
-      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#kaio";
+      rebuild = "sudo nixos-rebuild switch --flake .#nixos";
 
       # Git
       gl = "git log";

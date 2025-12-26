@@ -90,10 +90,18 @@
 
   nix = {
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
     settings.experimental-features = [
       "nix-command"
       "flakes"
     ];
+
+    gc = {
+      automatic = true;
+      dates = "08:00";
+      options = "--delete-older-than 7d";
+    };
+    optimise.automatic = true;
   };
 
   system.stateVersion = "25.05"; # DO NOT CHANGE!!!
