@@ -10,17 +10,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-  in
-  {
+  in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
+        ./system/configuration.nix
+        home-manager.nixosModules.default
+        {
+          home-manager = {
+            userGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = { inherit inputs };
+            users.kaio = import ./home/home.nix;
+          };
+        }
       ];
     };
   };
