@@ -5,7 +5,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      # NixOs
+      # NixOS
       cdc = "cd /etc/nixos";
       update = "sudo nix flake update";
       rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#kaio";
