@@ -26,9 +26,9 @@
         home-manager.nixosModules.default
         {
           home-manager = {
-            userGlobalPkgs = true;
+            useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs };
+            extraSpecialArgs = { inherit inputs; };
             users.kaio = import ./home/home.nix;
           };
         }
