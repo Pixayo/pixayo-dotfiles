@@ -11,11 +11,11 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 5; # Limits generations
 
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
+  # networking
   networking.networkmanager.enable = true;
+  networking.hostName = "nixos"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -35,10 +35,9 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
+  # TODO: Move GNOME desktop configs to a dedicated module
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
@@ -67,6 +66,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # TODO: Move user declaration to a dedicated module
   users.users.kaio = {
     isNormalUser = true;
     description = "kaio";
@@ -82,17 +82,32 @@
     nixd
     alejandra
   ];
-
+  
+  # TODO: Move programs to a dedicated module or directory
   programs.zsh.enable = true;
   programs.firefox.enable = true;
 
+  services.flatpak.enable = true; # TODO: automate flatpak setup
   nixpkgs.config.allowUnfree = true;
 
   nix = {
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
     settings.experimental-features = [
       "nix-command"
       "flakes"
     ];
+
+    gc = {
+      automatic = true;
+      persistent = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+
+      # Check log : journalctl -u nix-gc.service
+      # Next scheduled run : systemctl list-timers nix-gc.timer
+    };
+    optimise.automatic = true;
   };
 
   system.stateVersion = "25.05"; # DO NOT CHANGE!!!

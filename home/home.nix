@@ -20,10 +20,6 @@
       
       fastfetch
     ];
-  
-    sessionVariables = {
-      TERMINAL = "alacritty";
-    };
   };
 
   # Let Home Manager install and manage itself.
