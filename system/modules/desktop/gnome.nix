@@ -6,7 +6,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     # Enable x11 by default, but can be disabled for a pure Wayland session.
-    services.xserver.enable = lib.mkDefault true;
+    services.xserver.enable = true;
 
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
