@@ -8,6 +8,7 @@
 
   imports = [
     ./myPrograms
+    ./myDotfiles/gnomeConfig.nix
   ];
 
   # Programs to be installed with no custom configuration.
