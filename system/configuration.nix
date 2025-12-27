@@ -35,12 +35,6 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # TODO: Move GNOME desktop configs to a dedicated module
-  services.xserver.enable = true;
-
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "br";
