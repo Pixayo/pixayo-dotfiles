@@ -11,15 +11,19 @@
     ./myPrograms
   ];
 
-  home = {
-    packages = with pkgs; [
-      obsidian
+  # Programs to be installed with no custom configuration.
+  home.packages = with pkgs; [
+    obsidian
 
-      gruvbox-plus-icons
-      bibata-cursors
+    gruvbox-plus-icons
+    bibata-cursors
 
-      fastfetch
-    ];
+    fastfetch
+  ];
+
+  # Used to disable program inside "myPrograms" directory
+  myPrograms = {
+    # btop.enable = false;
   };
 
   # Let Home Manager install and manage itself.
