@@ -8,7 +8,7 @@
   home.stateVersion = "25.11"; # DO NOT CHANGE!!!
 	
   imports = [
-    ./programs
+    ./myPrograms
   ];
 	
   home = {

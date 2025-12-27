@@ -8,6 +8,9 @@ in {
     # Enable x11 by default, but can be disabled for a pure Wayland session.
     services.xserver.enable = true;
 
+    # # Enable xdg portal, required for flatpak applications.
+    # xdg.portal.enable = true;
+
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
 

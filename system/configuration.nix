@@ -8,6 +8,9 @@
     ./modules/desktop/gnome.nix
   ];
 
+  # For GNOME desktop module:
+  gnome.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
