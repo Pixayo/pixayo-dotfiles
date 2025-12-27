@@ -51,6 +51,8 @@ in {
       gnome-music
       gnome-system-monitor
       gnome-weather
+      gnome-software
+      gnome-tour
     ];
   };
 }
