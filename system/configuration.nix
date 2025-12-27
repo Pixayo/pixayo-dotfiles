@@ -79,7 +79,7 @@
     nixd
     alejandra
   ];
-  
+
   # TODO: Move programs to a dedicated module or directory
   programs.zsh.enable = true;
   programs.firefox.enable = true;
@@ -88,7 +88,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
     settings.experimental-features = [
       "nix-command"

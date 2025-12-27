@@ -1,5 +1,8 @@
-{ config, lib, ... }: 
-let 
+{
+  config,
+  lib,
+  ...
+}: let
   cfg = config.myPrograms.git;
 in {
   options.myPrograms.git.enable = lib.mkOption {

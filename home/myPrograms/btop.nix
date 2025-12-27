@@ -1,5 +1,8 @@
-{ config, lib, ... }: 
-let 
+{
+  config,
+  lib,
+  ...
+}: let
   cfg = config.myPrograms.btop;
 in {
   options.myPrograms.btop.enable = lib.mkOption {

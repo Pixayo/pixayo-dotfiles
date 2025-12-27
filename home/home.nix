@@ -6,18 +6,18 @@
   home.username = "kaio";
   home.homeDirectory = "/home/kaio";
   home.stateVersion = "25.11"; # DO NOT CHANGE!!!
-	
+
   imports = [
     ./myPrograms
   ];
-	
+
   home = {
     packages = with pkgs; [
       obsidian
-      
+
       gruvbox-plus-icons
       bibata-cursors
-      
+
       fastfetch
     ];
   };

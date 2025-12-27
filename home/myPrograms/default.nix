@@ -1,13 +1,10 @@
-{ 
-  lib,
-   ... 
-}: let 
+{lib, ...}: let
   files = builtins.readDir ./.;
 
-  nixFiles = 
+  nixFiles =
     lib.filter
-      (name: name != "default.nix" && lib.hasSuffix ".nix" name)
-      (builtins.attrNames files);
+    (name: name != "default.nix" && lib.hasSuffix ".nix" name)
+    (builtins.attrNames files);
 in {
   imports = map (name: ./. + "/${name}") nixFiles;
 }

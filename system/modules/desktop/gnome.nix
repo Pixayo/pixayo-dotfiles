@@ -1,5 +1,9 @@
-{ pkgs, config, lib, ... }: 
-let 
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   cfg = config.gnome;
 in {
   options.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
@@ -22,10 +26,10 @@ in {
 
     # Packages to exclude from the default environment
     # Comment applications to NOT exclude them.
-    environment.gnome.excludePackages = with pkgs; [ 
+    environment.gnome.excludePackages = with pkgs; [
       # nautilus # File explorer
       # loupe # Document reader
-      # snapshot 
+      # snapshot
       baobab
       decibels
       epiphany

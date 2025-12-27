@@ -1,5 +1,9 @@
-{ pkgs, config, lib, ... }: 
-let 
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   cfg = config.myPrograms.vscodium;
 in {
   options.myPrograms.vscodium.enable = lib.mkOption {
