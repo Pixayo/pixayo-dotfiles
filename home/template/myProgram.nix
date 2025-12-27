@@ -3,13 +3,13 @@
   lib,
   ...
 }: let
-  program = "CHANGE-ME";
-  cfg = config.myPrograms.${program};
+  # Replace "CHANGE-ME" with your PROGRAM name.
+  cfg = config.myPrograms.CHANGE-ME;
 in {
-  options.myPrograms.${program}.enable = lib.mkOption {
+  options.myPrograms.CHANGE-ME.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
-    description = "Install and configure ${program}.";
+    description = "Install and configure <CHANGE-ME>";
   };
 
   config = lib.mkIf cfg.enable {
