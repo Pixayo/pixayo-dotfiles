@@ -1,4 +1,4 @@
-Template modules related to Home Manager configurations. These are designed
+Template modules use widely in my NixOS environment. These are designed
 to keep the system organized and predictable by providing a standard toggle-based 
 structure.
 
