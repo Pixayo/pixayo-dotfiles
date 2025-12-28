@@ -16,6 +16,8 @@ in {
     programs.firefox = {
       enable = true;
 
+      # Remove "profile.ini" if needed with:
+      # $ rm /home/<USER>/.mozilla/firefox/profiles.ini
       profiles = {
         default = {
           id = 0;
