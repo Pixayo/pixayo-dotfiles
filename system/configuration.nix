@@ -9,10 +9,10 @@
     ./modules/desktop
   ];
 
-  # For GNOME desktop module:
+  # For GNOME desktop custom module:
   gnome.enable = true;
 
-  # Enable Steam module.
+  # Enable Steam custom module.
   steam.enable = true;
 
   # Bootloader.
