@@ -6,10 +6,14 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/desktop/gnome.nix
+    ./modules/core/firefox.nix
   ];
 
   # For GNOME desktop module:
   gnome.enable = true;
+
+  # System-wide programs
+  firefox.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -82,7 +86,6 @@
 
   # TODO: Move programs to a dedicated module or directory
   programs.zsh.enable = true;
-  programs.firefox.enable = true;
 
   services.flatpak.enable = true; # TODO: automate flatpak setup
   nixpkgs.config.allowUnfree = true;
