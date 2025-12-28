@@ -8,6 +8,10 @@
 in {
   options.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
+  # NOTE: This is a CUSTOM module for GNOME.
+  # It contains specific tweaks that may affect your experience with the
+  # GNOME environment.
+
   config = lib.mkIf cfg.enable {
     # Enable x11 by default, but can be disabled for a pure Wayland session.
     services.xserver.enable = true;
