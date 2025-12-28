@@ -6,14 +6,10 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/desktop/gnome.nix
-    ./modules/core/firefox.nix
   ];
 
   # For GNOME desktop module:
   gnome.enable = true;
-
-  # System-wide programs
-  firefox.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -9,7 +9,7 @@ in {
   options.firefox.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
-    description = "Install and configure firefox system-wide";
+    description = "Install and configure firefox";
   };
 
   config = lib.mkIf cfg.enable {
