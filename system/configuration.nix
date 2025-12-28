@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware/hardware-configuration.nix
     ./modules/core 
     ./modules/desktop
   ];
