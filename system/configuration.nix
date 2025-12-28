@@ -5,7 +5,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ./modules/desktop/gnome.nix
+    ./modules/core 
+    ./modules/desktop
   ];
 
   # For GNOME desktop module:
