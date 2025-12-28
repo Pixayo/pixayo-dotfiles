@@ -11,6 +11,8 @@
   # For GNOME desktop module:
   gnome.enable = true;
 
+  # Enable Steam module.
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
