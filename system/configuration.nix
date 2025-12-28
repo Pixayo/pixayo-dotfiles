@@ -13,6 +13,7 @@
   gnome.enable = true;
 
   # Enable Steam module.
+  steam.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -83,7 +84,7 @@
     alejandra
   ];
 
-  # TODO: Move programs to a dedicated module or directory
+  # Enable Zsh, a power shell environment.
   programs.zsh.enable = true;
 
   services.flatpak.enable = true; # TODO: automate flatpak setup
