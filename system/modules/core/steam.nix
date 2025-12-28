@@ -6,7 +6,6 @@
 }: let
   cfg = config.steam;
 in {
-
   # Why Steam isn't a home module?
   # It's because the Steam client requires system-level integration
   # that Home Manager cannot provide, such as:

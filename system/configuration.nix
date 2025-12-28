@@ -5,11 +5,11 @@
 }: {
   imports = [
     ./hardware/hardware-configuration.nix
-    ./modules/core 
+    ./modules/core
     ./modules/desktop
   ];
 
-  # For GNOME desktop custom module:
+  # Enable GNOME desktop custom module:
   gnome.enable = true;
 
   # Enable Steam custom module.

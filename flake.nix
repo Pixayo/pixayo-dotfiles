@@ -9,16 +9,21 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = {
     self,
+    nur, # Use in my Firefox home module .
     nixpkgs,
-    nur,
     home-manager,
     ...
   } @ inputs: let
+    pixayo = {
+      # TODO: Implement dinamic configuration for user/host
+      username = "kaio";
+      hostname = "nixos";
+      desktop = "gnome";
+    };
     system = "x86_64-linux";
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -27,7 +32,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./system/configuration.nix
-        
+
         {nixpkgs.overlays = [nur.overlays.default];}
         home-manager.nixosModules.default
         {

@@ -1,5 +1,4 @@
-{ pkgs, ... }: 
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     gnome-tweaks
     # dconf-editor
@@ -21,8 +20,7 @@
     };
 
     "org/gnome/desktop/background" = {
-      picture-uri-dark =
-        "file:///home/kaio/Imagens/wallpapers/gruvbox-snake-minimal.jpg";
+      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/gruvbox-snake-minimal.jpg";
       picture-options = "zoom";
     };
 
@@ -34,7 +32,7 @@
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      show-desktop = [ "<Super>d" ];
+      show-desktop = ["<Super>d"];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
