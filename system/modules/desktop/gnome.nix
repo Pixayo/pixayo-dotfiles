@@ -51,5 +51,11 @@ in {
       gnome-software
       gnome-tour
     ];
+
+    environment.systemPackages = with pkgs; [
+      gnomeExtensions.open-bar
+      gnomeExtensions.hide-top-bar
+      gnomeExtensions.dash-to-dock
+    ];
   };
 }
