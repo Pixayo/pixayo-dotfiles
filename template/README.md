@@ -3,7 +3,7 @@ to keep the system organized and predictable by providing a standard structure f
 modules and other files (e.g. `default.nix`, which is a special type of module).
 
 By default, **all modules are enabled**. You can disable them by explicitly setting
-the corresponding option to `false` in your `home.nix` file.
+the corresponding option to `false` in your `home.nix`/`configuration.nix` file.
 
 To add a new home program, use the `myProgram.nix` module as a boilerplate for
 your configuration.
