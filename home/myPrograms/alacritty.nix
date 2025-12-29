@@ -16,7 +16,26 @@ in {
       enable = true;
       theme = "gruvbox_dark";
 
-      settings.window.opacity = 0.85;
+      settings = {
+        window.opacity = 0.85;
+
+        font = {
+          size = 11.5;
+
+          normal = {
+            family = "FiraMono Nerd Font";
+            style = "Regular";
+          };
+          bold = {
+            family = "FiraMono Nerd Font";
+            style = "Bold";
+          };
+          italic = {
+            family = "FiraMono Nerd Font";
+            style = "Italic";
+          };
+        };
+      };
     };
   };
 }

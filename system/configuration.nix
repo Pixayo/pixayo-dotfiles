@@ -84,6 +84,10 @@
     alejandra
   ];
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-mono 
+  ];
+
   # Enable Zsh, a power shell environment.
   programs.zsh.enable = true;
 

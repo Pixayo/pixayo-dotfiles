@@ -8,20 +8,25 @@
     ./myDotfiles/gnomeConfig.nix
   ];
 
-  # Programs to be installed with no custom configuration.
-  home.packages = with pkgs; [
-    obsidian
-
-    gruvbox-plus-icons
-    bibata-cursors
-
-    fastfetch
-  ];
-
   # Used to disable program inside "myPrograms" directory
   myPrograms = {
     # btop.enable = false;
   };
+
+  # Programs to be installed with no custom configuration.
+  home.packages = with pkgs; [
+    # Notes
+    obsidian
+
+    # Theme / Icon / Cursor
+    gruvbox-plus-icons
+    bibata-cursors
+
+    # Terminal related
+    fastfetch
+  ];
+
+  fonts.fontconfig.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

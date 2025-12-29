@@ -20,8 +20,13 @@
     };
 
     "org/gnome/desktop/background" = {
-      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/gruvbox-snake-minimal.jpg";
+      picture-uri = "file:///home/kaio/Imagens/wallpapers/gnixbird-wallpaper(1366x768).png";
+      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
       picture-options = "zoom";
+    };
+
+    "org/gnome/desktop/screensaver" = {
+      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
     };
 
     "org/gnome/settings-daemon/plugins/color" = {
