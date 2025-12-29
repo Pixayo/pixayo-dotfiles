@@ -10,17 +10,47 @@
     # gnomeExtensions.user-themes
   ];
 
+  programs.gnome-shell = {
+    enable = true;
+
+    extensions = with pkgs.gnomeExtensions; [
+      # open-bar
+      # hide-top-bar
+      # dash-to-dock
+      # user-themes
+    ];
+  };
+
   dconf.settings = {
+    # General configuration
     "org/gnome/desktop/interface" = {
-      accent-color = "yellow";
+      # accent-color = "yellow";
       color-scheme = "prefer-dark";
       cursor-theme = "Bibata-Modern-Ice";
-      gtk-theme = "Adwaita";
       icon-theme = "Gruvbox-Plus-Dark";
+      # gtk-theme = "Adwaita"; # You can use GTK module to set themes
     };
 
+    # GNOME Shell
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "dash-to-dock@micxgx.gmail.com"
+        "hidetopbar@mathieu.bidon.ca"
+        "openbar@neuromorph"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+      ];
+
+      # Show in dock only ...
+      favorite-apps = [
+        "Alacritty.desktop"
+        "org.gnome.Nautilus.desktop"
+        "firefox.desktop"
+      ];
+    };
+
+    # Default Wallpaper
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/kaio/Imagens/wallpapers/gnixbird-wallpaper(1366x768).png";
+      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
       picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
       picture-options = "zoom";
     };
@@ -29,6 +59,7 @@
       picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
     };
 
+    # Acessibility
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = false;
@@ -36,6 +67,7 @@
       night-light-schedule-to = 8.0;
     };
 
+    # Custom Keybinds
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = ["<Super>d"];
     };
@@ -50,20 +82,6 @@
       binding = "<Control><Alt>t";
       command = "alacritty";
       name = "terminal";
-    };
-
-    "org/gnome/shell" = {
-      enabled-extensions = [
-        "dash-to-dock@micxgx.gmail.com"
-        "hidetopbar@mathieu.bidon.ca"
-        "openbar@neuromorph"
-      ];
-
-      favorite-apps = [
-        "Alacritty.desktop"
-        "org.gnome.Nautilus.desktop"
-        "firefox.desktop"
-      ];
     };
   };
 }

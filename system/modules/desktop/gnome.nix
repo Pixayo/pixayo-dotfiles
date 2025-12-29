@@ -61,6 +61,7 @@ in {
       gnomeExtensions.open-bar
       gnomeExtensions.hide-top-bar
       gnomeExtensions.dash-to-dock
+      gnomeExtensions.user-themes
     ];
   };
 }
