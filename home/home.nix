@@ -18,14 +18,6 @@
     # Notes
     obsidian
 
-    # Theme / Icon / Cursor
-    gruvbox-dark-gtk
-    gruvbox-gtk-theme
-    gruvbox-kvantum
-    
-    gruvbox-plus-icons
-    bibata-cursors
-
     # Terminal related
     fastfetch
   ];

@@ -3,23 +3,10 @@
     gnome-tweaks
     # dconf-editor
 
-    # FIXME: Realocate GNOME extensions from "system" to "home" environment
-    # gnomeExtensions.open-bar
-    # gnomeExtensions.hide-top-bar
-    # gnomeExtensions.dash-to-dock
-    # gnomeExtensions.user-themes
+    # Theme / Icon / Cursor
+    gruvbox-plus-icons
+    bibata-cursors
   ];
-
-  programs.gnome-shell = {
-    enable = true;
-
-    extensions = with pkgs.gnomeExtensions; [
-      # open-bar
-      # hide-top-bar
-      # dash-to-dock
-      # user-themes
-    ];
-  };
 
   dconf.settings = {
     # General configuration
