@@ -32,8 +32,10 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./system/configuration.nix
-
         {nixpkgs.overlays = [nur.overlays.default];}
+
+        # TODO: Switch to Standalone home-manager
+        # SEE: https://github.com/nix-community/home-manager/blob/master/templates/standalone/flake.nix
         home-manager.nixosModules.default
         {
           home-manager = {
