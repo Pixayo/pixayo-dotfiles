@@ -41,8 +41,8 @@ in {
         hm = "home-manager";
         cdhm = "cd ~/.config/home-manager";
 
-        hmr = "home-manager switch --flake ~/.config/home-manager#kaio";
-        hmup = "cd ~/.config/home-manager && nix flake update";
+        hmr = "home-manager switch --flake ~/.config/home-manager#kaio"; # clobbered erro: "-b backup"
+        hmupdate = "cd ~/.config/home-manager && nix flake update";
 
         hmtest = "home-manager build  --flake ~/.config/home-manager#kaio";
         hmrollback = "home-manager switch --rollback";

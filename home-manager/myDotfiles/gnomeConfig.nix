@@ -36,6 +36,7 @@
       ];
     };
 
+    # TODO: Use Stilyx to manage wallpapers and themes
     # Default Wallpaper
     "org/gnome/desktop/background" = {
       picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
