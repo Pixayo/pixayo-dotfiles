@@ -37,13 +37,13 @@
 
     # Default Wallpaper
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
-      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
+      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
+      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
       picture-options = "zoom";
     };
 
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-wallpaper(1366x768).png";
+      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
     };
 
     # Acessibility

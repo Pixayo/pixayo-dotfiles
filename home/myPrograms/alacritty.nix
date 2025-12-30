@@ -17,7 +17,12 @@ in {
       theme = "gruvbox_dark";
 
       settings = {
-        window.opacity = 0.85;
+        window = {
+          title = "Alacritty";
+          dynamic_title = false;
+
+          opacity = 0.85;
+        };
 
         font = {
           size = 11.5;
