@@ -12,6 +12,8 @@ in {
     description = "Install and configure firefox";
   };
 
+  # NOTE: Tweaking Firefox declaratively is a PAIN IN THE ASS
+
   config = lib.mkIf cfg.enable {
     programs.firefox = {
       enable = true;
