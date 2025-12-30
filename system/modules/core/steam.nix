@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  cfg = config.steam;
+  cfg = config.modules.steam;
 in {
   # Why Steam isn't a home module?
   # It's because the Steam client requires system-level integration
@@ -18,7 +18,7 @@ in {
   # Steam is one of a few programs that need to be configured this way.
   # However, you can still use the Flatpak version of Steam.
 
-  options.steam.enable = lib.mkOption {
+  options.modules.steam.enable = lib.mkOption {
     type = lib.types.bool;
     default = false;
     description = "Install and configure steam";

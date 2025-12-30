@@ -5,15 +5,18 @@
 }: {
   imports = [
     ./hardware/hardware-configuration.nix
-    ./modules/core
     ./modules/desktop
+    ./modules/core
   ];
 
-  # Enable GNOME desktop custom module:
-  gnome.enable = true;
+  # Enable/Disable custom modules.
+  modules = {
+    # Desktop
+    gnome.enable = true;
 
-  # Enable Steam custom module.
-  steam.enable = true;
+    # Core
+    steam.enable = true; 
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -84,6 +87,7 @@
     alejandra
   ];
 
+  # FIXME: My home module dependes on FiraMono, but currently don't manage it.
   fonts.packages = with pkgs; [
     nerd-fonts.fira-mono 
   ];

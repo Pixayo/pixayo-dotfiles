@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.gnome;
+  cfg = config.modules.gnome;
 in {
-  options.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
+  options.modules.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
   # NOTE: This is a CUSTOM module for GNOME.
   # It contains specific tweaks that may affect your experience with the
