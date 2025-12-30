@@ -18,12 +18,6 @@
     home-manager,
     ...
   } @ inputs: let
-    pixayo = {
-      # TODO: Implement dinamic configuration for user/host
-      username = "kaio";
-      hostname = "nixos";
-      desktop = "gnome";
-    };
     system = "x86_64-linux";
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

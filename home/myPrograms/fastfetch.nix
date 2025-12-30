@@ -56,6 +56,11 @@ in {
             keyColor = "green";
           }
           {
+            type = "shell";
+            key = " Shell";
+            keyColor = "green";
+          }
+          {
             type = "memory";
             key = " RAM";
             keyColor = "blue";
