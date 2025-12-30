@@ -55,7 +55,7 @@
   console.keyMap = "br-abnt2";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -87,15 +87,14 @@
     alejandra
   ];
 
-  # FIXME: My home module dependes on FiraMono, but currently don't manage it.
+  # FIXME: Realocate. My home module dependes on FiraMono, but currently don't manage it
   fonts.packages = with pkgs; [
     nerd-fonts.fira-mono 
   ];
 
-  # Enable Zsh, a power shell environment.
   programs.zsh.enable = true;
 
-  services.flatpak.enable = true; # TODO: automate flatpak setup
+  services.flatpak.enable = true; # TODO: automate flatpak setup (services custom module)
   nixpkgs.config.allowUnfree = true;
 
   nix = {

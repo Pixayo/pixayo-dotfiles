@@ -32,10 +32,11 @@ in {
           };
 
           extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+            bitwarden
             ublock-origin
             protondb-for-steam
             steam-database # SteamDB
-            youtube-recommended-videos # Unhook for hiddin Youtube elements
+            youtube-recommended-videos # Unhook, hide Youtube elements
           ];
 
           search = {
@@ -73,7 +74,6 @@ in {
 
               bing.metaData.hidden = true;
               google.metaData.hidden = true;
-              # google.metaData.alias = "@g"; # builtin engines only support specifying one additional alias
             };
           };
         };
