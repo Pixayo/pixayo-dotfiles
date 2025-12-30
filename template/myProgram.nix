@@ -12,6 +12,8 @@ in {
     description = "Install and configure <CHANGE-ME>";
   };
 
+  # NOTE: This template is made for HOME MANAGER modules
+
   config = lib.mkIf cfg.enable {
     # ... Configuration ...
   };

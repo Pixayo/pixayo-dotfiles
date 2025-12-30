@@ -32,6 +32,7 @@
         "Alacritty.desktop"
         "org.gnome.Nautilus.desktop"
         "firefox.desktop"
+        "obsidian.desktop"
       ];
     };
 

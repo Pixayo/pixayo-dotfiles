@@ -5,8 +5,15 @@ modules and other files (e.g. `default.nix`, which is a special type of module).
 By default, **all modules are enabled**. You can disable them by explicitly setting
 the corresponding option to `false` in your `home.nix`/`configuration.nix` file.
 
-To add a new home program, use the `myProgram.nix` module as a boilerplate for
-your configuration.
+To import every module withing the same directory, use `default.nix` and import the
+directory itself, like: 
+```nix
+imports = [ ./myDirectory ];
+```
+
+To add a new HOME program, use `myProgram.nix`.
+
+To add a new CUSTOM system module, use `myModule.nix`.
 
 **WARNING**: This directory **SHOULD NOT** be imported. Use its structure as a
 template for other modules.
