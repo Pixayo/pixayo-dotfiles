@@ -2,7 +2,6 @@
   description = "Home Manager configuration of kaio";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR"; 
 
@@ -16,23 +15,19 @@
     { nixpkgs, nur, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+
+        overlays = [nur.overlays.default];
+        config = {
+          allowUnfree = true;
+        };
+      };
     in
     {
-      homeConfigurations."kaio" = home-manager.lib.homeManagerConfiguration {
-        inherit system;
+      homeConfigurations.kaio = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ 
-          ./home.nix 
-
-          {nixpkgs.overlays = [nur.overlays.default];}
-        ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        modules = [ ./home.nix ];
       };
     };
 }
