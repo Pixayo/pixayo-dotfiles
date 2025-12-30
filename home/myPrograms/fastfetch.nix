@@ -32,32 +32,37 @@ in {
         modules = [
           {
             type = "os";
-            key = "\udb84\udd05 OS";
+            key = "󱄅 OS";
             keyColor = "yellow";
           }
           {
             type = "kernel";
-            key = "\uea74 Kernel";
+            key = " Kernel";
+            keyColor = "yellow";
+          }
+          {
+            type = "packages";
+            key = " Pkgs";
             keyColor = "yellow";
           }
           {
             type = "wm";
-            key = "\ueb7f WM";
+            key = "󱂬 WM";
             keyColor = "green";
           }
           {
             type = "terminal";
-            key = "\ue795 Terminal";
+            key = " Terminal";
             keyColor = "green";
           }
           {
             type = "memory";
-            key = "\uefc5 RAM";
+            key = " RAM";
             keyColor = "blue";
           }
           {
             type = "uptime";
-            key = "\ue641 Up";
+            key = "󰥔 Up for";
             keyColor = "blue";
           }
         ];

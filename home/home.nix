@@ -5,7 +5,7 @@
 
   imports = [
     ./myPrograms
-    ./myDotfiles/gnomeConfig.nix
+    ./myDotfiles/gnomeConfig.nix # TODO: automate system config import
   ];
 
   # Used to disable program inside "myPrograms" directory
@@ -17,9 +17,6 @@
   home.packages = with pkgs; [
     # Notes
     obsidian
-
-    # Terminal related
-    fastfetch
   ];
 
   fonts.fontconfig.enable = true;
