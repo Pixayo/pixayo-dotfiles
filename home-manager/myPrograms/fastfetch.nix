@@ -17,7 +17,7 @@ in {
 
       settings = {
         logo = {
-          source = "nixos_small";
+          source = "nixos";
           padding = {
             right = 1;
           };

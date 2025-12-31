@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur.url = "github:nix-community/NUR"; 
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,13 +15,12 @@
   };
 
   outputs =
-    { nixpkgs, nur, home-manager, stylix, ... }:
+    { nixpkgs, home-manager, stylix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
 
-        overlays = [nur.overlays.default];
         config = {
           allowUnfree = true;
         };
@@ -33,7 +31,7 @@
         inherit pkgs;
         modules = [ 
           ./home.nix 
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
         ];
       };
     };

@@ -14,10 +14,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.btop = {
       enable = true;
-
-      settings = {
-        color_theme = "gruvbox_dark";
-      };
     };
   };
 }

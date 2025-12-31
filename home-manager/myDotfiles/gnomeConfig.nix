@@ -4,18 +4,18 @@
     # dconf-editor
 
     # Theme / Icon / Cursor
-    gruvbox-plus-icons
-    bibata-cursors
+    # gruvbox-plus-icons
+    # bibata-cursors
   ];
 
   dconf.settings = {
     # General configuration
     "org/gnome/desktop/interface" = {
       # accent-color = "yellow";
-      color-scheme = "prefer-dark";
-      cursor-theme = "Bibata-Modern-Ice";
-      icon-theme = "Gruvbox-Plus-Dark";
-      # gtk-theme = "Adwaita"; # You can use GTK module to set themes
+      # color-scheme = "prefer-dark";
+      # cursor-theme = "Bibata-Modern-Ice";
+      # icon-theme = "Gruvbox-Plus-Dark";
+      # gtk-theme = "Adwaita"; 
     };
 
     # GNOME Shell
@@ -34,18 +34,6 @@
         "firefox.desktop"
         "obsidian.desktop"
       ];
-    };
-
-    # TODO: Use Stilyx to manage wallpapers and themes
-    # Default Wallpaper
-    "org/gnome/desktop/background" = {
-      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
-      picture-uri-dark = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
-      picture-options = "zoom";
-    };
-
-    "org/gnome/desktop/screensaver" = {
-      picture-uri = "file:///home/kaio/Imagens/wallpapers/nixbird-descentralized-wallpaper(1366x768).png";
     };
 
     # Acessibility

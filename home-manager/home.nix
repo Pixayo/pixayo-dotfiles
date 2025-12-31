@@ -5,7 +5,7 @@
 
   imports = [
     ./myPrograms
-    ./myDotfiles/gnomeConfig.nix # TODO: automate DE config import
+    ./myDotfiles/gnomeConfig.nix 
     ./myDotfiles/style.nix
   ];
 
