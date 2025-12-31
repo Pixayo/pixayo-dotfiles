@@ -117,5 +117,12 @@
     optimise.automatic = true;
   };
 
-  system.stateVersion = "25.05"; # DO NOT CHANGE!!!
+  # WARNING: StateVersion is NOT the same as system version. 
+  # It defines the NixOS version at which this system's persistent state
+  # was first created and is used to preserve compatibility with existing
+  # data and defaults that affect it.
+  #
+  # Only change it if your system's original configuration points to another
+  # state version.
+  system.stateVersion = "25.05"; # STOP RIGHT THERE YOUR CRIMINAL!
 }

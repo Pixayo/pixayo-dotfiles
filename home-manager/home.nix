@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.username = "kaio";
   home.homeDirectory = "/home/kaio";
-  home.stateVersion = "25.11"; # DO NOT CHANGE!!!
 
   imports = [
     ./myPrograms
@@ -23,8 +22,17 @@
     nerd-fonts.fira-mono 
   ];
 
+  # Make fonts installed with home.packages visible.
   fonts.fontconfig.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # WARNING: StateVersion is NOT the Home Manager version
+  # It is a compatibility mechanism for persistent data, it isn't related
+  # to system or home-manager versions.
+  #
+  # Changing this may break your home environment. Do not change it
+  # unless you know the consequences.
+  home.stateVersion = "25.11";
 }
