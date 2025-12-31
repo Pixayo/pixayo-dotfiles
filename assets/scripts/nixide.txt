@@ -1,0 +1,41 @@
+{
+    // Settings.json for VSCode/VSCodium nix coding
+    // Place under .vscode and rename it to "settings.json"
+
+    // Requires: 
+    // - "Nix IDE" extension
+    // - "Nixd" LSP
+    // - "alejandra" formatter
+    
+    "nix.enableLanguageServer": true,
+    "nix.formatterPath": "alejandra",
+    "nix.serverPath": "nixd",
+
+    "[nix]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
+    "nix.serverSettings": {
+        "nixd": {
+            "formatting": {
+                "command": ["alejandra"]
+            },
+            "options": {
+                // TIP: use "nix repl" to evaluate paths!
+                "nixos": {
+                "expr": "(builtins.getFlake \"<path-to-flake>\").nixosConfigurations.<hostname>.options",
+                },
+                "home-manager": {
+                "expr": "(builtins.getFlake \"<path-to-flake>\").homeConfigurations.<username>.options"
+                },
+            },
+            "diagnostic": {
+                "suppress": [
+                    "sema-extra-with", // Suppress unused "with" statements
+                    // "sema-unused-def-lambda-noarg-formal", // Suppress unused attributes (e.g. config, lib, ...)
+                ]
+            },
+        }
+    }
+}
