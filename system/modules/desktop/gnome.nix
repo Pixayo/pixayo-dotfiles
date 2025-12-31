@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.modules.gnome;
+  cfg = config.customModules.gnome;
 in {
-  options.modules.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
+  options.customModules.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
 
   # NOTE: This is a CUSTOM module for GNOME.
   # It contains specific tweaks that may affect your experience with the
@@ -26,7 +26,6 @@ in {
     services.gnome.core-developer-tools.enable = false;
 
     # Packages to exclude from the default environment
-    # Comment applications to NOT exclude them.
     environment.gnome.excludePackages = with pkgs; [
       # nautilus # File explorer
       # loupe # Document reader

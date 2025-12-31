@@ -9,8 +9,8 @@
     ./modules/core
   ];
 
-  # Enable/Disable custom modules.
-  modules = {
+  # Enable custom modules.
+  customModules = {
     # Desktop
     gnome.enable = true;
 
