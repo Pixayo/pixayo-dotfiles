@@ -17,11 +17,15 @@ in {
 
       settings = {
         logo = {
-          source = "nixos";
+          source = "nixos_small";
           padding = {
-            top = 2;
-            left = 1;
+            top = 1;
+            left = 2;
             right = 2;
+          };
+          color = {
+            "1" = "yellow";
+            "2" = "blue";
           };
         };
         display = {
@@ -34,8 +38,8 @@ in {
         modules = [
           # ───── Title ─────
           {
-            type = "title";
-            format = "{#1}───────────── {#}{user-name-colored}";
+            type = "custom";
+            format = "───────────────────────────────";
           }
 
           # ───── System ─────
@@ -66,18 +70,23 @@ in {
             format = "";
           } 
           {
+            type = "de";
+            key = " DE";
+            keyColor = "green";
+          }
+          {
             type = "wm";
-            key = "󱂬 WM";
+            key = " WM";
             keyColor = "green";
           }
           {
             type = "terminal";
-            key = " Terminal";
+            key = "󰆍 Terminal";
             keyColor = "green";
           }
           {
             type = "shell";
-            key = " Shell";
+            key = " Shell";
             keyColor = "green";
           }
 
@@ -113,7 +122,7 @@ in {
           }
           {
             type = "custom";
-            format = "{#1}───────────────────────────────";
+            format = "───────────────────────────────";
           }
         ];
       };
