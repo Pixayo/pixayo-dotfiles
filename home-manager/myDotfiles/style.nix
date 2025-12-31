@@ -4,7 +4,7 @@
     enable = true;
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    image = ./../../assets/wallpapers/1366x768/nixbird-descentralized-wallpaper-1366x768.png;
+    image = ./../wallpapers/1366x768/nixbird-descentralized-wallpaper-1366x768.png;
 
     icons = {
       enable = true;
