@@ -19,7 +19,9 @@ in {
         logo = {
           source = "nixos";
           padding = {
-            right = 1;
+            top = 2;
+            left = 1;
+            right = 2;
           };
         };
         display = {
@@ -30,6 +32,13 @@ in {
           color = "blue";
         };
         modules = [
+          # ───── Title ─────
+          {
+            type = "title";
+            format = "{#1}───────────── {#}{user-name-colored}";
+          }
+
+          # ───── System ─────
           {
             type = "os";
             key = "󱄅 OS";
@@ -46,6 +55,17 @@ in {
             keyColor = "yellow";
           }
           {
+            type = "uptime";
+            key = "󰥔 Up for";
+            keyColor = "yellow";
+          }
+
+          # ───── Desktop ─────
+          {
+            type = "custom";
+            format = "";
+          } 
+          {
             type = "wm";
             key = "󱂬 WM";
             keyColor = "green";
@@ -60,15 +80,40 @@ in {
             key = " Shell";
             keyColor = "green";
           }
+
+          # ───── Hardware ─────
+          {
+            type = "custom";
+            format = "";
+          } 
+          {
+            type = "cpu";
+            key = "󰻠 CPU";
+            keyColor = "blue";
+          }
+          {
+            type = "gpu";
+            key = "󰢮 GPU";
+            keyColor = "blue";
+          }
           {
             type = "memory";
             key = " RAM";
             keyColor = "blue";
           }
+
+          # ───── Footer ─────
           {
-            type = "uptime";
-            key = "󰥔 Up for";
-            keyColor = "blue";
+            type = "custom";
+            format = "";
+          } 
+          {
+            type = "colors";
+            symbol = "circle";
+          }
+          {
+            type = "custom";
+            format = "{#1}───────────────────────────────";
           }
         ];
       };
