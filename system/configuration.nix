@@ -87,10 +87,10 @@
     alejandra
   ];
 
-  # FIXME: Realocate. My home module dependes on FiraMono, but currently don't manage it
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-mono 
-  ];
+  # # FIXME: Realocate. My home module dependes on FiraMono, but currently don't manage it
+  # fonts.packages = with pkgs; [
+  #   nerd-fonts.fira-mono 
+  # ];
 
   programs.zsh.enable = true;
 

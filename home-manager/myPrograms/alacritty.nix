@@ -25,7 +25,7 @@ in {
         };
 
         font = {
-          size = 11.5;
+          size = 12;
 
           normal = {
             family = "FiraMono Nerd Font";

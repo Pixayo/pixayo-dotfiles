@@ -18,6 +18,9 @@
   home.packages = with pkgs; [
     # Notes
     obsidian
+
+    # Fonts
+    nerd-fonts.fira-mono 
   ];
 
   fonts.fontconfig.enable = true;
