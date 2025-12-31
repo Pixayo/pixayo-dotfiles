@@ -9,10 +9,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, nur, home-manager, ... }:
+    { nixpkgs, nur, home-manager, stylix, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -27,7 +31,10 @@
     {
       homeConfigurations.kaio = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [ 
+          ./home.nix 
+          stylix.homeManagerModules.stylix
+        ];
       };
     };
 }

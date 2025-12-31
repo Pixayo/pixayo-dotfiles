@@ -6,6 +6,7 @@
   imports = [
     ./myPrograms
     ./myDotfiles/gnomeConfig.nix # TODO: automate DE config import
+    ./myDotfiles/style.nix
   ];
 
   # Used to disable program inside "myPrograms" directory
