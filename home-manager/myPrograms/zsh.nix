@@ -21,8 +21,9 @@ in {
         enable = true;
 
         theme = "agnoster";
-        plugins = [ 
-          "git" "sudo" 
+        plugins = [
+          "git"
+          "sudo"
         ];
       };
 
@@ -32,10 +33,6 @@ in {
         gs = "git status";
         gsave = "git add -A && git commit -m 'Checkpoint'";
 
-        # NixOS management
-        cdc = "cd /etc/nixos";
-        update = "sudo nix flake update";
-        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
 
         # Home Manager
         hm = "home-manager";
@@ -44,12 +41,23 @@ in {
         hmr = "home-manager switch --flake ~/.config/home-manager#kaio"; # clobbered erro: "-b backup"
         hmupdate = "cd ~/.config/home-manager && nix flake update";
 
-        hmtest = "home-manager build  --flake ~/.config/home-manager#kaio";
+        hmtest = "home-manager build --flake ~/.config/home-manager#kaio";
         hmrollback = "home-manager switch --rollback";
 
-        hmclean = "nix-collect-garbage --delete-older-than 7d";
+        hmclean = "nix-collect-garbage --delete-old";
         hmshow = "nix flake show ~/.config/home-manager";
         hmgen = "home-manager generations";
+
+        # NixOS management
+        cdc = "cd /etc/nixos";
+        update = "sudo nix flake update";
+        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
+
+        # Other commands:
+        # nixos-rebuild list-generations           # List system generations
+        # nix-collect-garbage --delete-old         # Clean user generations
+        # sudo nix-collect-garbage --delete-old    # Delete system-wide garbage
+        # sudo nix flake update                    # Update flake inputs
       };
     };
   };

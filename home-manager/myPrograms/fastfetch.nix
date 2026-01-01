@@ -45,7 +45,7 @@ in {
           # ───── System ─────
           {
             type = "os";
-            key = "󱄅 OS";
+            key = " OS";
             keyColor = "yellow";
           }
           {
@@ -68,7 +68,7 @@ in {
           {
             type = "custom";
             format = "";
-          } 
+          }
           {
             type = "de";
             key = " DE";
@@ -76,7 +76,7 @@ in {
           }
           {
             type = "wm";
-            key = " WM";
+            key = " WM";
             keyColor = "green";
           }
           {
@@ -94,7 +94,7 @@ in {
           {
             type = "custom";
             format = "";
-          } 
+          }
           {
             type = "cpu";
             key = "󰻠 CPU";
@@ -115,7 +115,7 @@ in {
           {
             type = "custom";
             format = "";
-          } 
+          }
           {
             type = "colors";
             symbol = "circle";

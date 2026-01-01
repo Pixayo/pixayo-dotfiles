@@ -6,7 +6,7 @@
   imports = [
     ./hardware/hardware-configuration.nix
     ./userlist/list.nix
-    
+
     ./modules/desktop
     ./modules/core
   ];
@@ -15,7 +15,7 @@
   customModules = {
     gnome.enable = true;
 
-    steam.enable = true; 
+    steam.enable = true;
   };
 
   # Bootloader.
@@ -103,12 +103,12 @@
     optimise.automatic = true;
   };
 
-  # WARNING: StateVersion is NOT the same as system version. 
+  # WARNING: StateVersion is NOT the same as system version.
   # It defines the NixOS version at which this system's persistent state
   # was first created and is used to preserve compatibility with existing
   # data and defaults that affect it.
   #
-  # Only change this if your system's original configuration used a 
+  # Only change this if your system's original configuration used a
   # different state version.
   system.stateVersion = "25.05"; # STOP RIGHT THERE YOUR CRIMINAL!
 }

@@ -1,5 +1,4 @@
-{ pkgs, ... }: 
-{
+{pkgs, ...}: {
   stylix = {
     enable = true;
 
@@ -18,7 +17,7 @@
       size = 20;
     };
 
-    fonts = { 
+    fonts = {
       serif = {
         package = pkgs.adwaita-fonts;
         name = "Adwaita Serif";
@@ -40,7 +39,7 @@
     targets = {
       alacritty.enable = false;
       firefox.enable = false; # DON'T TOUCH FIREFOX FOR GODSSAKE
-      vscode.enable = false; 
+      vscode.enable = false;
     };
 
     polarity = "dark";

@@ -14,25 +14,27 @@
     };
   };
 
-  outputs =
-    { nixpkgs, home-manager, stylix, ... }:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
+  outputs = {
+    nixpkgs,
+    home-manager,
+    stylix,
+    ...
+  }: let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
 
-        config = {
-          allowUnfree = true;
-        };
-      };
-    in
-    {
-      homeConfigurations.kaio = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ 
-          ./home.nix 
-          stylix.homeModules.stylix
-        ];
+      config = {
+        allowUnfree = true;
       };
     };
+  in {
+    homeConfigurations.kaio = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home.nix
+        stylix.homeModules.stylix
+      ];
+    };
+  };
 }

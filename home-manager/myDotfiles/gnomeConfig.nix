@@ -2,20 +2,16 @@
   home.packages = with pkgs; [
     gnome-tweaks
     # dconf-editor
-
-    # Theme / Icon / Cursor
-    # gruvbox-plus-icons
-    # bibata-cursors
   ];
 
   dconf.settings = {
     # General configuration
     "org/gnome/desktop/interface" = {
-      # accent-color = "yellow";
+      accent-color = "yellow";
       # color-scheme = "prefer-dark";
       # cursor-theme = "Bibata-Modern-Ice";
       # icon-theme = "Gruvbox-Plus-Dark";
-      # gtk-theme = "Adwaita"; 
+      # gtk-theme = "Adwaita";
     };
 
     # GNOME Shell
@@ -44,17 +40,18 @@
       night-light-schedule-to = 8.0;
     };
 
-    # Custom Keybinds
     "org/gnome/desktop/wm/keybindings" = {
       show-desktop = ["<Super>d"];
     };
 
+    # Custom Keybinds
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
     };
 
+    # Open alacritty
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Control><Alt>t";
       command = "alacritty";

@@ -1,5 +1,4 @@
-{ pkgs, ... }: 
-{
+{pkgs, ...}: {
   users.users = {
     kaio = {
       isNormalUser = true;

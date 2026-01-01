@@ -3,7 +3,7 @@
   home.homeDirectory = "/home/kaio";
 
   imports = [
-    ./myDotfiles/gnomeConfig.nix 
+    ./myDotfiles/gnomeConfig.nix
     ./myDotfiles/style.nix
     ./myPrograms
   ];
@@ -19,7 +19,7 @@
     obsidian
 
     # Fonts
-    nerd-fonts.fira-mono 
+    nerd-fonts.fira-mono
   ];
 
   # Make fonts installed with home.packages visible.
