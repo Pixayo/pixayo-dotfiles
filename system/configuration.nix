@@ -5,7 +5,8 @@
 }: {
   imports = [
     ./hardware/hardware-configuration.nix
-    ./modules/userlist/list.nix
+    ./userlist/list.nix
+    
     ./modules/desktop
     ./modules/core
   ];
