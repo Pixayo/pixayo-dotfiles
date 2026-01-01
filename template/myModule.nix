@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  # Replace "CHANGE-ME" with your PROGRAM name.
+  # Replace "CHANGE-ME" with your MODULE name.
   cfg = config.customModules.CHANGE-ME;
 in {
   options.customModules.CHANGE-ME.enable = lib.mkOption {
