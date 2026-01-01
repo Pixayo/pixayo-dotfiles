@@ -3,9 +3,9 @@
   home.homeDirectory = "/home/kaio";
 
   imports = [
-    ./myPrograms
     ./myDotfiles/gnomeConfig.nix 
     ./myDotfiles/style.nix
+    ./myPrograms
   ];
 
   # Used to disable program inside "myPrograms" directory

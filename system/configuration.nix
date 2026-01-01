@@ -5,16 +5,15 @@
 }: {
   imports = [
     ./hardware/hardware-configuration.nix
+    ./modules/userlist/list.nix
     ./modules/desktop
     ./modules/core
   ];
 
   # Enable custom modules.
   customModules = {
-    # Desktop
     gnome.enable = true;
 
-    # Core
     steam.enable = true; 
   };
 
@@ -70,15 +69,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # TODO: Move user declaration to a dedicated module
-  users.users.kaio = {
-    isNormalUser = true;
-    description = "kaio";
-    extraGroups = ["networkmanager" "wheel"];
-
-    shell = pkgs.zsh;
-  };
-
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -86,11 +76,6 @@
     nixd
     alejandra
   ];
-
-  # # FIXME: Realocate. My home module dependes on FiraMono, but currently don't manage it
-  # fonts.packages = with pkgs; [
-  #   nerd-fonts.fira-mono 
-  # ];
 
   programs.zsh.enable = true;
 
@@ -122,7 +107,7 @@
   # was first created and is used to preserve compatibility with existing
   # data and defaults that affect it.
   #
-  # Only change it if your system's original configuration points to another
-  # state version.
+  # Only change this if your system's original configuration used a 
+  # different state version.
   system.stateVersion = "25.05"; # STOP RIGHT THERE YOUR CRIMINAL!
 }

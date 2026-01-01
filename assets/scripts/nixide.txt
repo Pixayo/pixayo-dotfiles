@@ -23,6 +23,7 @@
             },
             "options": {
                 // TIP: use "nix repl" to evaluate paths!
+                
                 "nixos": {
                 "expr": "(builtins.getFlake \"<path-to-flake>\").nixosConfigurations.<hostname>.options",
                 },
@@ -33,7 +34,7 @@
             "diagnostic": {
                 "suppress": [
                     "sema-extra-with", // Suppress unused "with" statements
-                    // "sema-unused-def-lambda-noarg-formal", // Suppress unused attributes (e.g. config, lib, ...)
+                    "sema-unused-def-lambda-noarg-formal", // Suppress unused attributes (e.g. config, lib, ...)
                 ]
             },
         }
