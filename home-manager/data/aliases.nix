@@ -11,7 +11,7 @@ in {
   cdhm = "cd ${env.paths.home}";
 
   hmr = "home-manager switch --flake ${env.paths.home}#${env.user.name}"; # clobbered erro: "-b backup"
-  hmupdate = "cd ${env.paths.home} && nix flake update";
+  hmupdate = "nix flake update --flake ${env.paths.home}";
 
   hmtest = "home-manager build --flake ${env.paths.home}#${env.user.name}";
   hmrollback = "home-manager switch --rollback";
@@ -22,7 +22,7 @@ in {
 
   # NixOS management
   cdc = "cd ${env.paths.system}";
-  update = "sudo nix flake update";
+  update = "sudo nix flake update --flake ${env.paths.system}";
   rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
 
   # Other commands:
