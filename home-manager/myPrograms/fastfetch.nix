@@ -29,10 +29,7 @@ in {
           };
         };
         display = {
-          separator = ": ";
-          size = {
-            binaryPrefix = "si";
-          };
+          separator = " -> ";
           color = "blue";
         };
         modules = [

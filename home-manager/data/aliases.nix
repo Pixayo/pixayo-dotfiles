@@ -26,6 +26,7 @@ in {
   rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
 
   # Other commands:
+  # nixos-generate-config                    # Create default config files
   # nixos-rebuild list-generations           # List system generations
   # nix-collect-garbage --delete-old         # Clean user generations
   # sudo nix-collect-garbage --delete-old    # Delete system-wide garbage
