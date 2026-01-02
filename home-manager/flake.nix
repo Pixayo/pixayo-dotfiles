@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of kaio";
+  description = "Home Manager configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -20,7 +20,11 @@
     stylix,
     ...
   }: let
-    system = "x86_64-linux";
+    data = import ./data;
+    
+    system = data.env.system;
+    user = data.env.user.name;
+
     pkgs = import nixpkgs {
       inherit system;
 
@@ -29,8 +33,10 @@
       };
     };
   in {
-    homeConfigurations.kaio = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+
+      extraSpecialArgs = { inherit data; };
       modules = [
         ./home.nix
         stylix.homeModules.stylix

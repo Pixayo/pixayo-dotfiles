@@ -1,6 +1,6 @@
-{pkgs, ...}: {
-  home.username = "kaio";
-  home.homeDirectory = "/home/kaio";
+{pkgs, data, ...}: {
+  home.username = data.env.user.name;
+  home.homeDirectory = data.env.user.homeDirectory;
 
   imports = [
     ./myDotfiles/gnomeConfig.nix
