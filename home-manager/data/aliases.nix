@@ -25,7 +25,7 @@ in {
   update = "sudo nix flake update --flake ${env.paths.system}";
   rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
 
-  # Other commands:
+  # Extra commands:
   # nixos-generate-config                    # Create default config files
   # nixos-rebuild list-generations           # List system generations
   # nix-collect-garbage --delete-old         # Clean user generations
