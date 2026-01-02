@@ -5,8 +5,8 @@
   };
 
   paths = {
-    home = ./..;
-    system = /etc/nixos;
+    home = "~/.config/home-manager";
+    system = "/etc/nixos";
   };
 
   system = "x86_64-linux";
