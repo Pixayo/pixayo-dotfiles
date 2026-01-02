@@ -70,6 +70,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.users = { 
+    kaio = {
+      isNormalUser = true;
+      description = "kaio";
+      extraGroups = ["networkmanager" "wheel"];
+
+      shell = pkgs.zsh;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     git
