@@ -20,6 +20,9 @@
 
     # Fonts
     nerd-fonts.fira-mono
+
+    # Game related
+    rimsort # Mod manager for RimWorld
   ];
 
   # Make fonts installed with home.packages visible.
