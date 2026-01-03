@@ -25,6 +25,12 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    # Enable gamemode daemon that allows games to request a set of
+    # optimisations be applied to the host OS and/or a game process.
+    programs.gamemode.enable = true;
+    # Implement the following command to a Steam game properties:
+    # gamemoderun %command%
+
     programs.steam = {
       enable = true;
 
