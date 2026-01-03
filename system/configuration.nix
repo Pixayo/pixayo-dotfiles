@@ -72,7 +72,7 @@
     kaio = {
       isNormalUser = true;
       description = "kaio";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "gamemode"];
 
       shell = pkgs.zsh;
     };
