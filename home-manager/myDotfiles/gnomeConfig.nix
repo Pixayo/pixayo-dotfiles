@@ -1,13 +1,15 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    gnome-tweaks
-    # dconf-editor
-  ] ++ (with gnomeExtensions; [
-    dash-to-dock
-    hide-top-bar
-    open-bar
-    user-themes
-  ]);
+  home.packages = with pkgs;
+    [
+      gnome-tweaks
+      # dconf-editor
+    ]
+    ++ (with gnomeExtensions; [
+      dash-to-dock
+      hide-top-bar
+      open-bar
+      user-themes
+    ]);
 
   dconf = {
     enable = true;

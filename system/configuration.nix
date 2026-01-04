@@ -68,7 +68,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users.users = { 
+  users.users = {
     kaio = {
       isNormalUser = true;
       description = "kaio";

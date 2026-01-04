@@ -21,7 +21,7 @@
     ...
   }: let
     data = import ./data;
-    
+
     system = data.env.system;
     user = data.env.user.name;
 
@@ -36,7 +36,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
-      extraSpecialArgs = { inherit data; };
+      extraSpecialArgs = {inherit data;};
       modules = [
         ./home.nix
         stylix.homeModules.stylix

@@ -1,4 +1,8 @@
-{pkgs, data, ...}: {
+{
+  pkgs,
+  data,
+  ...
+}: {
   home.username = data.env.user.name;
   home.homeDirectory = data.env.user.homeDirectory;
 
