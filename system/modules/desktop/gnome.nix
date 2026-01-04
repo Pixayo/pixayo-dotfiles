@@ -54,13 +54,5 @@ in {
       gnome-software
       gnome-tour
     ];
-
-    # FIXME: Move extensions to Home environment (still figuring it out...).
-    environment.systemPackages = with pkgs; [
-      gnomeExtensions.open-bar
-      gnomeExtensions.hide-top-bar
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.user-themes
-    ];
   };
 }
