@@ -34,6 +34,14 @@
       };
 
       # emoji = { ... };
+
+      # Make some GUI system elements smaller
+      # it helps with low screen resolutions like: 1366x768
+      sizes = {
+        applications = 11;
+        desktop = 11;
+        popups = 11;
+      };
     };
 
     targets = {
