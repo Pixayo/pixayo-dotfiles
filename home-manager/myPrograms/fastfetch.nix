@@ -16,6 +16,7 @@ in {
       enable = true;
 
       settings = {
+        display.separator = " -> ";
         logo = {
           source = "nixos_small";
           padding = {
@@ -27,10 +28,6 @@ in {
             "1" = "yellow";
             "2" = "blue";
           };
-        };
-        display = {
-          separator = " -> ";
-          color = "blue";
         };
         modules = [
           # ───── Title ─────
