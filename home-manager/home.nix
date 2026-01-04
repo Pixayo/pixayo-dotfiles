@@ -26,6 +26,7 @@
     nerd-fonts.fira-mono
 
     # Game related
+    steamcmd
     rimsort # Mod manager for RimWorld
   ];
 

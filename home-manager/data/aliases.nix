@@ -4,7 +4,7 @@ in {
   # Git
   gl = "git log";
   gs = "git status";
-  gsave = "git add -A && git commit -m 'Checkpoint'";
+  gsave = "git commit -am 'Checkpoint'";
 
   # Home Manager
   hm = "home-manager";
@@ -22,13 +22,21 @@ in {
 
   # NixOS management
   cdc = "cd ${env.paths.system}";
-  update = "sudo nix flake update --flake ${env.paths.system}";
-  rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
 
-  # Extra commands:
+  rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
+  update = "sudo nix flake update --flake ${env.paths.system}";
+
+  test-rebuild = "sudo nixos-rebuild test --flake ${env.paths.system}";
+  rollback = "sudo nixos-rebuild switch --rollback";
+
+  optimise = "sudo nix store optimise";
+  list-gens = "nixos-rebuild lisqt-generations";
+
+  # Extra:
   # nixos-generate-config                    # Create default config files
   # nixos-rebuild list-generations           # List system generations
   # nix-collect-garbage --delete-old         # Clean user generations
   # sudo nix-collect-garbage --delete-old    # Delete system-wide garbage
   # sudo nix flake update                    # Update flake inputs
+  # sudo nix store optimise                  # Reduces Nix store disk space usage
 }
