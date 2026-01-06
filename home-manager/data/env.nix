@@ -1,4 +1,6 @@
 {
+  # Metadata for home environment configuration
+  
   user = {
     name = "kaio";
     homeDirectory = "/home/kaio";

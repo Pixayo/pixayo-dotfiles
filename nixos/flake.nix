@@ -10,12 +10,15 @@
     nixpkgs,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
+    data = import ./data/system.nix;
+
+    host = data.hostname;
+    system = data.system;
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
       inherit system;
 
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs data; };
       modules = [ ./configuration.nix ];
     };
   };

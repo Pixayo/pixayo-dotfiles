@@ -1,5 +1,6 @@
 {
   pkgs,
+  data,
   inputs,
   ...
 }: {
@@ -23,7 +24,7 @@
 
   # networking
   networking.networkmanager.enable = true;
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = data.hostname; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -68,7 +69,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users.users = {
+  users.users = { # Define users here.
     kaio = {
       isNormalUser = true;
       description = "kaio";
