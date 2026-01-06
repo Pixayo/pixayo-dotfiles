@@ -22,7 +22,7 @@
 </p>
 
 > **AVISO**: Eu planejo continuar expandindo a documentação, mas apenas em inglês por ser mais fácil
-de gerenciar e manter tudo atualizado.
+de gerenciar e manter tudo atualizado. A única exceção é este README, ele continuará sendo atualizado.
 
 ## Sobre
 
