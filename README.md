@@ -1,3 +1,5 @@
+<!-- Default README (English) -->
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
@@ -14,13 +16,29 @@
 
 ---
 
-<p align="center">
-  <strong>Work in progress... come back later!</strong>
+<p>
+  <a href="README.md">EN</a> |
+  <a href="README.pt-br.md">PT-BR</a>
 </p>
 
 ## About
 
+This repository is a collection of Nix files meant to define and
+manage my personal NixOS environment.
+
+Something like this could (and probably should) be private. However,
+I decided to make it public to share my experience using NixOS and,
+hopefully, serve as a source of information for other users.
+
+Because of that, this repository is not just a pile of obscure
+configurations. Most decisions and changes are documented to some
+extent, either through README files and other Markdown documents
+or directly within the code itself. I plan to keep expanding this
+documentation over time.
+
 ## Content
+
+> Work in progress...
 
 ## Installation
 
