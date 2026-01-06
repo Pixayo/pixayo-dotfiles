@@ -78,6 +78,8 @@
     };
   };
 
+  services.flatpak.enable = true; 
+  
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -88,7 +90,6 @@
 
   programs.zsh.enable = true;
 
-  services.flatpak.enable = true; # TODO: automate flatpak setup (services custom module)
   nixpkgs.config.allowUnfree = true;
 
   nix = {
