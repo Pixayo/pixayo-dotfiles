@@ -26,9 +26,11 @@
                 
                 "nixos": {
                 "expr": "(builtins.getFlake \"<path-to-flake>\").nixosConfigurations.<hostname>.options",
+                // TIP: path can be: "/etc/nixos"
                 },
                 "home-manager": {
                 "expr": "(builtins.getFlake \"<path-to-flake>\").homeConfigurations.<username>.options"
+                // TIP: path can be: "~/.config/home-manager"
                 },
             },
             "diagnostic": {
