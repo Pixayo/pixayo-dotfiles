@@ -14,7 +14,7 @@
 
   # Used to disable program inside "myPrograms" directory
   myPrograms = {
-    # btop.enable = false;
+    # vscodium.enable = false;
   };
 
   # Programs to be installed with no custom configuration.
@@ -24,6 +24,9 @@
 
     # Fonts
     nerd-fonts.fira-mono
+
+    # CLI
+    btop
   ];
 
   # Make fonts installed with home.packages visible.
