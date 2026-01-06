@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="./assets/repo-banner.png">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.png">
+    <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/banner-dark.png">
+  </picture>
 </p>
 
 <p align="center">
