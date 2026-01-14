@@ -41,14 +41,19 @@ Meu sistema é pensado para ser portátil e adaptável, com múltiplos ou apenas
 Muitas configurações foram repartidas em módulos próprios que podem ser facilmente desacoplados, 
 sobrescritos ou removidos; também fornecendo uma base para a expansão e criação de novos módulos.
 
+Portanto, acredito que a minha configuração é um bom exemplo de como tornar sua própria configuração
+portátil e robusta com o uso de metadados e um modelo "lego".
+
 ### Estrutura do repositório
 
 ```text
 ├── assets -> Recursos visuais e utilitários não essenciais
 │   └── ...
 ├── home-manager -> Configuração do ambiente de usuário
+│   ├── data -> metadados do ambiente home
 │   └── ...
 ├── nixos -> Configuração do sistema NixOS
+│   ├── data -> metadados do sistema
 │   └── ...
 └── template -> Modelos reutilizáveis
     └── ...
@@ -58,6 +63,10 @@ Os diretórios `nixos` e `home-manager` são independentes e podem ser utilizado
 Ambos contam com um módulo `flake` próprio que fornece recursos essenciais para seus submódulos, 
 tornando sua replicação em outras máquinas e sistemas Linux com o gerenciador de pacotes Nix
 muito mais intuitiva.
+
+Em especial, os diretórios `data` não definem comportamento, eles apenas retêm dados mutáveis daquele
+ambiente, no caso do `home-manager` o arquivo `./home-manager/data/env.nix` contém dados do usuário como:
+nome, `home`, `paths` importantes e até a arquitetura do sistema, que é passada para `nixpkgs`.
 
 Por outro lado, os diretórios `assets`, `template`, e essencialmente qualquer outro diretório 
 que não seja os dois principais citados no último parágrafo, não exercem função técnica e, embora
