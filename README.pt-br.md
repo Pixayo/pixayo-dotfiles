@@ -68,15 +68,17 @@ possuam *scripts* e outros utilitários, não são necessários para o funcionam
 A implementação de "papéis de paredes" ou *wallpapers* no diretório `assets` parece uma decisão desconexa
 com o objetivo do repositório, mas é uma decisão pessoal. Sempre que preciso aplicar meu sistema em outra
 máquina ou reformatar um já existente, prefiro ter tudo versionado em um único local, agilizando o processo
-de replicagem e simplificando scripts de instalação.
+de replicação e simplificando scripts de instalação.
 
-Todos são de uso público. Fique a vontade para utilizá-los, se assim desejar.
+Todos são de uso público. Fique à vontade para utilizá-los, se assim desejar.
 
 ## Instalação
 
+Antes de começar o processo de instalação, certifique-se de que o seu sistema NixOS ou gerenciador Nix tenha `flakes` habilitado, esse é o único requisito para o processo de instalação.
+
 ### Automática
 
-> Ainda não foi implementada
+> Ainda não foi implementada.
 
 ### Manual
 
@@ -84,18 +86,23 @@ O processo de instalação manual deveria ser bem direto, mas por falta de teste
 afirmar que sempre será bem-sucedido.
 
 Para usar minha configuração, apenas instale os arquivos de `nixos` e/ou `home-manager`, seja com `git clone` 
-ou diretamente pelo github, e passe o conteúdo desses diretórios para `/etc/nixos` e `~/.config/home-manager`, respectivamente. 
+ou diretamente pelo GitHub, e passe o conteúdo desses diretórios para `/etc/nixos` e `~/.config/home-manager`, respectivamente. 
 
 ```shell
 git clone https://github.com/Pixayo/pixayo-dotfiles
 ```
 
-> **AVISO**: Após a instalação, modifique os arquivos, se necessário, antes de prosseguir; seja para alterar
+Após a instalação, modifique os arquivos, se necessário, antes de prosseguir; seja para alterar
 o nome do `host`/`user` ou para desabilitar certos módulos e opções. O conteúdo do diretório  `data`,
 presente tanto em `nixos` quanto em `home-manager`, contém boa parte dos dados que poderiam causar 
 algum tipo de conflito ou erro em novas instalações.
 
-Em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
+Exemplo de conflitos que podem ocorrer:
+- Nome do usuário padrão em `.nixos/data/system.nix` não corresponde ao usuário real.
+- Arquiteturas diferentes em `.nixos/data/system.nix` (ou `./home-manager/data/env.nix`) e `./nixos/hardware-configuration.nix`.
+- entre outros ...
+
+Ajustes feitos (ou não), em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
 
 #### NixOS
 
@@ -135,6 +142,6 @@ nix run github:nix-community/home-manager -- init --flake .#user
 > **AVISO**: a terminação `#user` se refere ao nome do usuário definido em `./data/env.nix`, tenha isso
 em mente.
 
-Fechando o processo de instalação do Home Manager para um usuário `user`.
+É apenas isso, o processo de instalação do home-manager é muito mais tranquilo.
 
 ## ...
