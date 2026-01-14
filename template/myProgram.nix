@@ -9,7 +9,7 @@ in {
   options.myPrograms.CHANGE-ME.enable = lib.mkOption {
     type = lib.types.bool;
     default = true;
-    description = "Install and configure <CHANGE-ME>";
+    description = "Install and configure CHANGE-ME";
   };
 
   # NOTE: This template is made for HOME MANAGER modules

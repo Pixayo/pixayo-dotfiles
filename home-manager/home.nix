@@ -26,7 +26,6 @@
     nerd-fonts.fira-mono
 
     # CLI
-    # yazi # CLI file manager
     btop
   ];
 
