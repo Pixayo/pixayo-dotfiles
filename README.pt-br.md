@@ -43,10 +43,16 @@ sobrescritos ou removidos; também fornecendo uma base para a expansão e criaç
 
 ### Estrutura do repositório
 
-- `nixos/` – Configuração do sistema NixOS
-- `home-manager/` – Configuração do ambiente de usuário
-- `assets/` – Recursos visuais e utilitários não essenciais
-- `template/` – Modelos reutilizáveis
+```text
+├── assets -> Recursos visuais e utilitários não essenciais
+│   └── ...
+├── home-manager -> Configuração do ambiente de usuário
+│   └── ...
+├── nixos -> Configuração do sistema NixOS
+│   └── ...
+└── template -> Modelos reutilizáveis
+    └── ...
+```
 
 Os diretórios `nixos` e `home-manager` são independentes e podem ser utilizados separadamente.
 Ambos contam com um módulo `flake` próprio que fornece recursos essenciais para seus submódulos, 

@@ -104,6 +104,7 @@
       auto-optimise-store = true;
     };
 
+    # Automate garbage collection.
     gc = {
       automatic = true;
       persistent = true;
