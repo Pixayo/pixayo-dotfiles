@@ -83,7 +83,7 @@ Todos são de uso público. Fique à vontade para utilizá-los, se assim desejar
 
 ## Visual
 
-Toda a identidade visual da minha configuração provêm do `home-manager` + `stilyx`, você consegue ver mais a fundo sobre no diretório `./home-manager/myDotfiles`.
+Toda a identidade visual da minha configuração provém do `home-manager` + `stilyx`, você consegue ver mais sobre no diretório `./home-manager/myDotfiles`.
 
 <p align="center"> 
   <img src="./assets/ignore/screenshot1.png">
