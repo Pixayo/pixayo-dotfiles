@@ -81,4 +81,6 @@ All the visual identity of my setup comes from `home-manager` + `stilyx`. You ca
 
 ## Installation
 
+> Only in pt-br for now.
+
 ## ...
