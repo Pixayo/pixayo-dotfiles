@@ -2,8 +2,8 @@
   # Metadata for home environment configuration
   
   user = {
-    name = "kaio";
-    homeDirectory = "/home/kaio";
+    name = "kaio";  # Change to your username
+    homeDirectory = "/home/kaio";  # Change to your home directory path
   };
 
   paths = {
@@ -11,5 +11,5 @@
     system = "/etc/nixos";
   };
 
-  system = "x86_64-linux";
+  system = "x86_64-linux"; # Change to match your system architecture
 }

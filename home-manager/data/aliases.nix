@@ -1,6 +1,8 @@
 let
   env = import ./env.nix;
 in {
+  # Aliases passed to ./home-manager/myPrograms/zsh.nix.
+
   # Git
   gl = "git log";
   gs = "git status";

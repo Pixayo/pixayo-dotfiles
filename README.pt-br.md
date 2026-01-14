@@ -74,6 +74,67 @@ Todos são de uso público. Fique a vontade para utilizá-los, se assim desejar.
 
 ## Instalação
 
-> Em construção...
+### Automática
+
+> Ainda não foi implementada
+
+### Manual
+
+O processo de instalação manual deveria ser bem direto, mas por falta de testes extensivos não posso
+afirmar que sempre será bem-sucedido.
+
+Para usar minha configuração, apenas instale os arquivos de `nixos` e/ou `home-manager`, seja com `git clone` 
+ou diretamente pelo github, e passe o conteúdo desses diretórios para `/etc/nixos` e `~/.config/home-manager`, respectivamente. 
+
+```shell
+git clone https://github.com/Pixayo/pixayo-dotfiles
+```
+
+> **AVISO**: Após a instalação, modifique os arquivos, se necessário, antes de prosseguir; seja para alterar
+o nome do `host`/`user` ou para desabilitar certos módulos e opções. O conteúdo do diretório  `data`,
+presente tanto em `nixos` quanto em `home-manager`, contém boa parte dos dados que poderiam causar 
+algum tipo de conflito ou erro em novas instalações.
+
+Em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
+
+#### NixOS
+
+Para instalar corretamente minha configuração do NixOS, é necessário que você inicialize uma sessão de seu
+gerenciador de arquivos como administrador ou use o comando `sudo mv` para transportar o conteúdo de `nixos`
+para o diretório do sistema.
+
+```shell
+sudo mv /etc/nixos /etc/nixos.backup
+sudo mv ./nixos /etc/nixos
+sudo cp /etc/nixos.backup/hardware-configuration.nix /etc/nixos
+```
+> **AVISO**: o comando `mv` preserva o dono original, então, após a execução desse comando, 
+`nixos` não pertencerá mais ao `root`.
+
+O comando acima renomeia o diretório `/etc/nixos` para `/etc/nixos.backup` e copia as configurações de
+hardware para o novo `/etc/nixos`, sobrescrevendo o meu próprio.
+
+Com tudo isso pronto, podemos executar:
+
+```shell
+sudo nixos-rebuild switch --flake /etc/nixos#nixos
+```
+> **AVISO**: a terminação `#nixos` se refere ao nome do host definido em `./data/system.nix`, tenha isso
+em mente.
+
+Fechando o processo de instalação da configuração do sistema.
+
+#### Home-manager
+
+Para instalar minha configuração do home-manager, você só precisa mover o conteúdo de `./home-manager` para
+`~/.config/home-manager` e ir até o diretório com `cd`, após isso, execute o comando:
+
+```shell
+nix run github:nix-community/home-manager -- init --flake .#user
+```
+> **AVISO**: a terminação `#user` se refere ao nome do usuário definido em `./data/env.nix`, tenha isso
+em mente.
+
+Fechando o processo de instalação do Home Manager para um usuário `user`.
 
 ## ...

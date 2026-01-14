@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./hardware/hardware-configuration.nix
+    ./hardware-configuration.nix
     ./modules/desktop
     ./modules/core
   ];
@@ -70,13 +70,16 @@
   # services.xserver.libinput.enable = true;
 
   users.users = { # Define users here.
-    kaio = {
+    data.system.default_user = {
       isNormalUser = true;
-      description = "kaio";
+      description = "Default user, defined in ./data/system.nix";
       extraGroups = ["networkmanager" "wheel" "gamemode"];
 
       shell = pkgs.zsh;
     };
+    # Extra users ...
+    # Alice = { ... };
+    # ...
   };
 
   services.flatpak.enable = true; 
