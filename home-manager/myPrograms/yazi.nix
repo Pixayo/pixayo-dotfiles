@@ -13,6 +13,8 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.yazi = {
+      # TODO: Use Yazi as my default file manager
+      # TODO: Implement fzf
       enable = true;
       
       settings = {
