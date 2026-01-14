@@ -73,6 +73,12 @@ All wallpapers are public domain. Feel free to use them if you wish.
 
 All the visual identity of my setup comes from `home-manager` + `stilyx`. You can see more details in the `./home-manager/myDotfiles` directory.
 
+<p align="center"> 
+  <img src="./assets/ignore/screenshot1.png">
+  <img src="./assets/ignore/screenshot2.png">
+  <img src="./assets/ignore/screenshot3.png">
+</p>
+
 ## Installation
 
 ## ...
