@@ -19,9 +19,28 @@ in {
         mgr = {
           show_hidden = false;
           show_symlink = true;
-          sort_by = "mtime";
+
+          sort_by = "extension";
           sort_dir_first = true;
-          sort_reverse = false;
+        };
+
+        preview = {
+          image = false; # Alacritty doesn't support image rendering.
+        };
+
+        keymap = {
+          manager = [
+          {
+            on = [ "q" ];
+            run = "quit";
+            desc = "Sair";
+          }
+          {
+            on = [ "." ];
+            run = "toggle_hidden";
+            desc = "Show/hide dotfiles";
+          }
+          ];
         };
       };
     };
