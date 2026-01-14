@@ -2,9 +2,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.png">
-    <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/banner-dark.png">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/ignore/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/ignore/banner-light.png">
+    <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/ignore/banner-dark.png">
   </picture>
 </p>
 
@@ -80,6 +80,16 @@ máquina ou reformatar um já existente, prefiro ter tudo versionado em um únic
 de replicação e simplificando scripts de instalação.
 
 Todos são de uso público. Fique à vontade para utilizá-los, se assim desejar.
+
+## Visual
+
+Toda a identidade visual da minha configuração provêm do `home-manager` + `stilyx`, você consegue ver mais a fundo sobre no diretório `./home-manager/myDotfiles`.
+
+<p align="center"> 
+  <img src="./assets/ignore/screenshot1.png">
+  <img src="./assets/ignore/screenshot2.png">
+  <img src="./assets/ignore/screenshot3.png">
+</p>
 
 ## Instalação
 
