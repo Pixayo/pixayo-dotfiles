@@ -27,6 +27,7 @@
 
     # CLI
     btop
+    tree
   ];
 
   # Make fonts installed with home.packages visible.

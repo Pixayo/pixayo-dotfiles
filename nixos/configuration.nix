@@ -69,17 +69,19 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users.users = { # Define users here.
-    data.system.default_user = {
-      isNormalUser = true;
-      description = "Default user, defined in ./data/system.nix";
-      extraGroups = ["networkmanager" "wheel" "gamemode"];
+  users = {
+    mutableUsers = true;
 
-      shell = pkgs.zsh;
+    users = { # Define users here.
+      ${data.default_user} = {
+        isNormalUser = true;
+        description = "Default user, defined in ./data/system.nix";
+        extraGroups = ["networkmanager" "wheel" "gamemode"];
+
+        shell = pkgs.zsh;
+      };
+      # Extra users ...
     };
-    # Extra users ...
-    # Alice = { ... };
-    # ...
   };
 
   services.flatpak.enable = true; 

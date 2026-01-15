@@ -7,6 +7,7 @@ the corresponding option to `false` in your `home.nix` file.
 
 To import every module within the same directory, use the `default.nix` template and
 import the directory itself, for example: 
+
 ```nix
 imports = [ ./myDirectory ];
 ```
