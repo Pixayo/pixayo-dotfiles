@@ -77,9 +77,9 @@ move_and_link() {
 
     # Check if target exist and is a directory
     if [ ! -d "$target" ]; then
-        printf "${BLUE}NOTE${RESET}: ${GREEN}%s${RESET} don't exist.\n" "$target"
+        printf "${BLUE}NOTE${RESET}: ${GREEN}%s${RESET} directory don't exist.\n" "$target"
     else
-        echo "Moving content to: $source"
+        echo "Copying content to: $source"
         
         if [ "$with_sudo" = true ]; then
             sudo cp -ra "$target/." "$source/"
