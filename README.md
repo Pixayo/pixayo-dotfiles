@@ -23,18 +23,14 @@
 
 ## About
 
-This repository is a collection of Nix files meant to define and
-manage my personal NixOS environment.
+This repository is a collection of Nix files meant to define and manage my personal NixOS environment.
 
-Something like this could (and probably should) be private. However,
-I decided to make it public to share my experience using NixOS and,
-hopefully, serve as a source of information for other users.
+Something like this could (and probably should) be private. However, I decided to make it public to share my
+experience using NixOS and, hopefully, serve as a source of information for other users.
 
-For that reason, this repository is not just a pile of obscure
-configurations. Most decisions and changes are documented to some
-extent, either through README files and other Markdown documents
-or directly within the code itself. I plan to keep expanding this
-documentation over time.
+For that reason, this repository is not just a pile of obscure configurations. Most decisions and changes
+are documented to some extent, either through README files and other Markdown documents or directly within
+the code itself. I plan to keep expanding this documentation over time.
 
 ## Content
 
@@ -59,9 +55,11 @@ Therefore, I believe my configuration is a good example of how to make your own 
 
 The `nixos` and `home-manager` directories are independent and can be used separately. Both include their own `flake` module, which provides essential resources for their submodules, making replication on other machines and Linux systems using the Nix package manager much more intuitive.
 
-In particular, the `data` directories do not define behavior; they only retain mutable data for their respective environments. In `home-manager`, for example: the file `./home-manager/data/env.nix` contains user-related data such as name, `home`, important `paths`, and even the system architecture, which is passed to `nixpkgs`.
+In particular, the `data` directories do not define behavior; they only retain mutable data for their
+respective environments. In `home-manager`, for example: the file `./home-manager/data/env.nix` contains user-related data such as name, `home`, important `paths`, and even the system architecture, which is passed to `nixpkgs`.
 
-On the other hand, the `assets`, `template`, and essentially any other directory that is not one of the two main ones mentioned in the previous paragraph do not serve a technical purpose. Although they may contain scripts and other utilities, they are not required for the system to function.
+On the other hand, `assets`, `template`, and essentially any other directory that is not one of the two main ones, do not serve a technical purpose. Although they may contain scripts and other utilities, they are not
+required for the system to function.
 
 ### About wallpapers
 

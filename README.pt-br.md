@@ -68,9 +68,9 @@ Em especial, os diretórios `data` não definem comportamento, eles apenas retê
 ambiente, no caso do `home-manager` o arquivo `./home-manager/data/env.nix` contém dados do usuário como:
 nome, `home`, `paths` importantes e até a arquitetura do sistema, que é passada para `nixpkgs`.
 
-Por outro lado, os diretórios `assets`, `template`, e essencialmente qualquer outro diretório 
-que não seja os dois principais citados no último parágrafo, não exercem função técnica e, embora
-possuam *scripts* e outros utilitários, não são necessários para o funcionamento do sistema.
+Por outro lado, `assets`, `template`, e essencialmente qualquer outro diretório que não seja os dois 
+principais, não exercem função técnica e, embora possuam *scripts* e outros utilitários, não são
+necessários para o funcionamento do sistema.
 
 ### Sobre Wallpapers 
 
@@ -117,8 +117,8 @@ presente tanto em `nixos` quanto em `home-manager`, contém boa parte dos dados 
 algum tipo de conflito ou erro em novas instalações.
 
 Exemplo de conflitos que podem ocorrer:
-- Nome do usuário padrão em `.nixos/data/system.nix` não corresponde ao usuário real.
-- Arquiteturas diferentes em `.nixos/data/system.nix` (ou `./home-manager/data/env.nix`) e `./nixos/hardware-configuration.nix`.
+- Nome do usuário padrão em `./nixos/data/system.nix` não corresponde ao usuário real.
+- Arquiteturas diferentes em `./nixos/data/system.nix` (ou `./home-manager/data/env.nix`) e `./nixos/hardware-configuration.nix`.
 - entre outros ...
 
 Ajustes feitos (ou não), em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
