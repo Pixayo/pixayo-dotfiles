@@ -117,8 +117,8 @@ presente tanto em `nixos` quanto em `home-manager`, contém boa parte dos dados 
 algum tipo de conflito ou erro em novas instalações.
 
 Exemplo de conflitos que podem ocorrer:
-- Nome do usuário padrão em `./nixos/data/system.nix` não corresponde ao usuário real.
-- Arquiteturas diferentes em `./nixos/data/system.nix` e `./nixos/hardware-configuration.nix`.
+- Nome do usuário padrão em `./nixos/configuration.nix` não corresponde ao usuário real.
+- Arquiteturas diferentes em `./nixos/data/env.nix` e `./nixos/hardware-configuration.nix`.
 - entre outros ...
 
 Ajustes feitos (ou não), em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
@@ -145,7 +145,7 @@ Com tudo isso pronto, podemos executar:
 ```shell
 sudo nixos-rebuild switch --flake /etc/nixos#nixos
 ```
-> **AVISO**: a terminação `#nixos` se refere ao nome do host definido em `./data/system.nix`, tenha isso
+> **AVISO**: a terminação `#nixos` se refere ao nome do host definido em `./nixos/data/system.nix`, tenha isso
 em mente.
 
 Fechando o processo de instalação da configuração do sistema.
@@ -158,8 +158,7 @@ Para instalar minha configuração do home-manager, você só precisa mover o co
 ```shell
 nix run github:nix-community/home-manager -- init --flake .#user
 ```
-> **AVISO**: a terminação `#user` se refere ao nome do usuário definido em `./data/env.nix`, tenha isso
-em mente.
+> **AVISO**: a terminação `#user` se refere ao nome do usuário definido em `./home-manager/data/env.nix`, tenha isso em mente.
 
 É apenas isso, o processo de instalação do home-manager é muito mais tranquilo.
 

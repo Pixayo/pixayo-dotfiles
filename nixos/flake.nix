@@ -10,7 +10,7 @@
     nixpkgs,
     ...
   } @ inputs: let
-    data = import ./data/system.nix;
+    data = import ./data/env.nix;
 
     host = data.hostname;
     system = data.system;

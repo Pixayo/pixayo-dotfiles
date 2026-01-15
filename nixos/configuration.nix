@@ -20,7 +20,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 5; # Limits generations
+  boot.loader.systemd-boot.configurationLimit = 10; # Limits generations
 
   # networking
   networking.networkmanager.enable = true;
@@ -73,14 +73,13 @@
     mutableUsers = true;
 
     users = { # Define users here.
-      ${data.default_user} = {
+      kaio = {
         isNormalUser = true;
-        description = "Default user, defined in ./data/system.nix";
+        description = "Default user";
         extraGroups = ["networkmanager" "wheel" "gamemode"];
 
         shell = pkgs.zsh;
       };
-      # Extra users ...
     };
   };
 
