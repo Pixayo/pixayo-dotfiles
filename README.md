@@ -65,7 +65,7 @@ required for the system to function.
 
 The implementation of wallpapers in the assets directory may seem disconnected from the repository’s main goal, but this is a personal choice. Whenever I need to apply my system to another machine or "nuke" an existing one, I prefer to have everything versioned in a single place. This speeds up the replication process and simplifies installation scripts.
 
-All wallpapers are public domain. Feel free to use them if you wish.
+Feel free to use them.
 
 ## Visuals
 

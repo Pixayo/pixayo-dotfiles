@@ -118,7 +118,7 @@ algum tipo de conflito ou erro em novas instalações.
 
 Exemplo de conflitos que podem ocorrer:
 - Nome do usuário padrão em `./nixos/data/system.nix` não corresponde ao usuário real.
-- Arquiteturas diferentes em `./nixos/data/system.nix` (ou `./home-manager/data/env.nix`) e `./nixos/hardware-configuration.nix`.
+- Arquiteturas diferentes em `./nixos/data/system.nix` e `./nixos/hardware-configuration.nix`.
 - entre outros ...
 
 Ajustes feitos (ou não), em um novo terminal, acesse o diretório contendo os arquivos com o comando `cd`.
