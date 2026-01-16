@@ -11,7 +11,7 @@
   ];
 
   # Enable custom modules.
-  customModules = {
+  custom = {
     gnome.enable = true;
 
     steam.enable = true;
