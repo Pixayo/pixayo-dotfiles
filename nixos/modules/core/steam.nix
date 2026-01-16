@@ -4,8 +4,6 @@
   lib,
   ...
 }: let
-  cfg = config.customModules.steam;
-in {
   # Why Steam isn't a home module?
   # It's because the Steam client requires system-level integration
   # that Home Manager cannot provide, such as:
@@ -18,15 +16,17 @@ in {
   # Steam is one of a few programs that need to be configured this way.
   # However, you can still use the Flatpak version of Steam.
 
-  options.customModules.steam.enable = lib.mkOption {
+  cfg = config.custom.steam;
+in {
+
+  options.custom.steam.enable = lib.mkOption {
     type = lib.types.bool;
     default = false;
     description = "Install and configure steam";
   };
 
   config = lib.mkIf cfg.enable {
-    # Enable gamemode daemon that allows games to request a set of
-    # optimisations be applied to the host OS and/or a game process.
+    # Enable gamemode daemon.
     programs.gamemode.enable = true;
     # Implement the following command to a Steam game properties:
     # gamemoderun %command%

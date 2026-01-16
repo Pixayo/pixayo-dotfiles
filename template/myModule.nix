@@ -4,9 +4,9 @@
   ...
 }: let
   # Replace "CHANGE-ME" with your MODULE name.
-  cfg = config.customModules.CHANGE-ME;
+  cfg = config.custom.CHANGE-ME;
 in {
-  options.customModules.CHANGE-ME.enable = lib.mkOption {
+  options.custom.CHANGE-ME.enable = lib.mkOption {
     type = lib.types.bool;
     default = false;
     description = "Install and configure <CHANGE-ME>";
