@@ -6,7 +6,9 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+
     ./modules/desktop
+    ./modules/programs
     ./modules/core
   ];
 
@@ -92,29 +94,6 @@
   programs.zsh.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-
-  nix = {
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      auto-optimise-store = true;
-    };
-
-    # Automate garbage collection.
-    gc = {
-      automatic = true;
-      persistent = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-
-      # Check log : journalctl -u nix-gc.service
-      # Next scheduled run : systemctl list-timers nix-gc.timer
-    };
-  };
 
   # WARNING: StateVersion is NOT the same as system version.
   # It defines the NixOS version at which this system's persistent state
