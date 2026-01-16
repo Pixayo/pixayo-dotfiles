@@ -15,6 +15,7 @@
   #
   # Steam is one of a few programs that need to be configured this way.
   # However, you can still use the Flatpak version of Steam.
+  
   cfg = config.custom.steam;
 in {
   options.custom.steam.enable = lib.mkOption {

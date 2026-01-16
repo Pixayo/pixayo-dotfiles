@@ -41,9 +41,6 @@ Meu sistema é pensado para ser portátil e adaptável, com múltiplos ou apenas
 Muitas configurações foram repartidas em módulos próprios que podem ser facilmente desacoplados, 
 sobrescritos ou removidos; também fornecendo uma base para a expansão e criação de novos módulos.
 
-Portanto, acredito que a minha configuração é um bom exemplo de como tornar sua própria configuração
-portátil e robusta com o uso de metadados e um modelo "lego".
-
 ### Estrutura do repositório
 
 ```text

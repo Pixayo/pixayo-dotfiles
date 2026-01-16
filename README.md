@@ -36,8 +36,6 @@ the code itself. I plan to keep expanding this documentation over time.
 
 My system is designed to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
 
-Therefore, I believe my configuration is a good example of how to make your own setup portable and robust through the use of metadata and a “lego-like” model.
-
 ### Repository structure
 
 ```text
