@@ -10,10 +10,10 @@
     nixpkgs,
     ...
   } @ inputs: let
-    data = import ./data/env.nix;
+    data = import ./data;
 
-    host = data.hostname;
-    system = data.system;
+    host = data.env.hostname;
+    system = data.env.system;
   in {
     nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
       inherit system;

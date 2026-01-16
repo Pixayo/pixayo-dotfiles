@@ -24,7 +24,7 @@
 
   # networking
   networking.networkmanager.enable = true;
-  networking.hostName = data.hostname; # Define your hostname.
+  networking.hostName = data.env.hostname; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -69,17 +69,13 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users = {
-    mutableUsers = true;
+  users.users = { # Define users here.
+    kaio = {
+      isNormalUser = true;
+      description = "Default user";
+      extraGroups = ["networkmanager" "wheel" "gamemode"];
 
-    users = { # Define users here.
-      kaio = {
-        isNormalUser = true;
-        description = "Default user";
-        extraGroups = ["networkmanager" "wheel" "gamemode"];
-
-        shell = pkgs.zsh;
-      };
+      shell = pkgs.zsh;
     };
   };
 
