@@ -18,8 +18,8 @@
     nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
       inherit system;
 
-      specialArgs = { inherit inputs data; };
-      modules = [ ./configuration.nix ];
+      specialArgs = {inherit inputs data;};
+      modules = [./configuration.nix];
     };
   };
 }

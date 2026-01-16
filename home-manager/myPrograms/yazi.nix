@@ -16,7 +16,7 @@ in {
       # TODO: Use Yazi as my default file manager
       # TODO: Implement fzf
       enable = true;
-      
+
       settings = {
         mgr = {
           show_hidden = false;
@@ -32,16 +32,16 @@ in {
 
         keymap = {
           manager = [
-          {
-            on = [ "q" ];
-            run = "quit";
-            desc = "Sair";
-          }
-          {
-            on = [ "." ];
-            run = "toggle_hidden";
-            desc = "Show/hide dotfiles";
-          }
+            {
+              on = ["q"];
+              run = "quit";
+              desc = "Sair";
+            }
+            {
+              on = ["."];
+              run = "toggle_hidden";
+              desc = "Show/hide dotfiles";
+            }
           ];
         };
       };

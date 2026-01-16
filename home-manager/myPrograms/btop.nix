@@ -14,11 +14,11 @@ in {
   config = lib.mkIf cfg.enable {
     programs.btop = {
       enable = true;
-      
+
       settings = {
         themes = "gruvbox_dark";
       };
-      
+
       themes = {
         gruvbox_dark = ''
           # Main background, empty for terminal default, need to be empty if you want transparent background

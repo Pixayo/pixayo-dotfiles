@@ -1,9 +1,9 @@
 {
   # Metadata for home environment configuration
-  
+
   user = {
-    name = "kaio";  # Change to your username
-    homeDirectory = "/home/kaio";  # Change to your home directory path
+    name = "kaio"; # Change to your username
+    homeDirectory = "/home/kaio"; # Change to your home directory path
   };
 
   paths = {
