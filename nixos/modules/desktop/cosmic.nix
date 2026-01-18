@@ -10,12 +10,17 @@
   };
 
   # Enable Greetd/TuiGreet login manager.
-  # See: https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/display-managers/greetd.nix
+  # See the nixpgs definition: https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/display-managers/greetd.nix
+  # See also: https://man.sr.ht/~kennylevinsen/greetd/
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "tuigreet --time --sessions /run/current-system/sw/share/wayland-sessions";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --sessions /run/current-system/sw/share/wayland-sessions";
+        # --time -> display current day and time.
+        # --remember -> remember last logged-in username.
+        # --sessions -> colon-separated list of Wayland session paths.
+
         # user = "greeter"; # NOTE: Default value already is "greeter"
       };
     };
