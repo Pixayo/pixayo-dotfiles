@@ -1,16 +1,17 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    gnome-tweaks
-    # dconf-editor
-  ]
-  ++ (with gnomeExtensions; [
-    dash-to-dock
-    hide-top-bar
-    open-bar
-    user-themes
-  ]);
+  home.packages = with pkgs;
+    [
+      gnome-tweaks
+      # dconf-editor
+    ]
+    ++ (with gnomeExtensions; [
+      dash-to-dock
+      hide-top-bar
+      open-bar
+      user-themes
+    ]);
 
-  # NOTE: 
+  # NOTE:
   # GNOME extensions are installed and enabled declaratively, but most
   # extension-specific settings are still at their defaults.
 
