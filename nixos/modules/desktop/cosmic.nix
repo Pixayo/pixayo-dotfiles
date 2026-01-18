@@ -1,4 +1,5 @@
-{pkgs, ...}: let 
+{pkgs, lib, ...}: let 
+  # tuigreet default session command break down.
   # See: https://github.com/apognu/tuigreet
   tuigreet = {
     time = "--time"; 
@@ -6,11 +7,13 @@
     sessions = "--sessions /run/current-system/sw/share/wayland-sessions";
     cmd = "--cmd cosmic-session";
 
-    message = "--greeting 'So you are finally up, huh? - Sojiro'"; # Did you get it?
+    message = "--greeting 'So you are finally up, huh? - Sojiro'"; # Persona 5 reference!
   };
 
-  tuigreetcommand = "${pkgs.tuigreet}/bin/tuigreet ${tuigreet.time} ${tuigreet.remember} ${tuigreet.sessions} ${tuigreet.cmd} ${tuigreet.message}";
+  flags = with tuigreet; [ time remember sessions cmd message ];
+  tuigreetcommand = "${pkgs.tuigreet}/bin/tuigreet ${lib.concatStringSep " " flags}";
 in {
+
   # NOTE: This is a CUSTOM module for COSMIC.
   # It contains specific tweaks that may affect your experience with the
   # COSMIC environment. Keep in mind that COSMIC is still in development.
