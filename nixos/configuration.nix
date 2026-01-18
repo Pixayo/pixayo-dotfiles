@@ -6,15 +6,13 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./modules/desktop
+    ./modules/desktop # Automatically apply DE-related config.
     ./modules/programs
     ./modules/core
   ];
 
   # Enable custom modules.
   custom = {
-    gnome.enable = true;
-
     steam.enable = true;
   };
 

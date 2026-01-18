@@ -3,53 +3,47 @@
   config,
   lib,
   ...
-}: let
-  cfg = config.custom.gnome;
-in {
-  options.custom.gnome.enable = lib.mkEnableOption "Enable GNOME desktop environment";
-
+}: {
   # NOTE: This is a CUSTOM module for GNOME.
   # It contains specific tweaks that may affect your experience with the
   # GNOME environment.
 
-  config = lib.mkIf cfg.enable {
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
-    programs.dconf.enable = true;
+  programs.dconf.enable = true;
 
-    services.gnome.games.enable = false;
-    services.gnome.core-apps.enable = true;
-    services.gnome.core-developer-tools.enable = false;
+  services.gnome.games.enable = false;
+  services.gnome.core-apps.enable = true;
+  services.gnome.core-developer-tools.enable = false;
 
-    # Packages to exclude from the default environment
-    environment.gnome.excludePackages = with pkgs; [
-      # nautilus # File explorer
-      # loupe # Document reader
-      # snapshot
-      baobab
-      decibels
-      epiphany
-      gnome-connections
-      simple-scan
-      totem
-      yelp
+  # Packages to exclude from the default environment
+  environment.gnome.excludePackages = with pkgs; [
+    # nautilus # File explorer
+    # loupe # Document reader
+    # snapshot
+    baobab
+    decibels
+    epiphany
+    gnome-connections
+    simple-scan
+    totem
+    yelp
 
-      # gnome-text-editor
-      # gnome-calculator
-      gnome-console
-      gnome-calendar
-      gnome-characters
-      gnome-clocks
-      gnome-contacts
-      gnome-font-viewer
-      gnome-logs
-      gnome-maps
-      gnome-music
-      gnome-system-monitor
-      gnome-weather
-      gnome-software
-      gnome-tour
-    ];
-  };
+    # gnome-text-editor
+    # gnome-calculator
+    gnome-console
+    gnome-calendar
+    gnome-characters
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-system-monitor
+    gnome-weather
+    gnome-software
+    gnome-tour
+  ];
 }
