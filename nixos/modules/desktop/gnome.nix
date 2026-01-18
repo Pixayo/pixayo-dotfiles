@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   # NOTE: This is a CUSTOM module for GNOME.
   # It contains specific tweaks that may affect your experience with the
   # GNOME environment.
