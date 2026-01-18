@@ -1,15 +1,18 @@
 {pkgs, ...}: {
-  home.packages = with pkgs;
-    [
-      gnome-tweaks
-      # dconf-editor
-    ]
-    ++ (with gnomeExtensions; [
-      dash-to-dock
-      hide-top-bar
-      open-bar
-      user-themes
-    ]);
+  home.packages = with pkgs; [
+    gnome-tweaks
+    # dconf-editor
+  ]
+  ++ (with gnomeExtensions; [
+    dash-to-dock
+    hide-top-bar
+    open-bar
+    user-themes
+  ]);
+
+  # NOTE: 
+  # GNOME extensions are installed and enabled declaratively, but most
+  # extension-specific settings are still at their defaults.
 
   dconf = {
     enable = true;
@@ -36,7 +39,7 @@
         # Show in dock only ...
         favorite-apps = [
           "Alacritty.desktop"
-          "org.gnome.Nautilus.desktop"
+          # "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "obsidian.desktop"
         ];
