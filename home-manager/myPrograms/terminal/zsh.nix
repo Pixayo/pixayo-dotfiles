@@ -25,7 +25,6 @@ in {
 
         theme = "agnoster";
         plugins = [
-          "git"
           "sudo"
         ];
       };

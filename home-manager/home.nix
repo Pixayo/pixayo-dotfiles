@@ -7,9 +7,11 @@
   home.homeDirectory = data.env.user.homeDirectory;
 
   imports = [
+    ./myPrograms
+    ./myPrograms/terminal
+
     ./myDotfiles/gnomeConfig.nix # TODO: Dynamic import "dotfiles config" with metadata/default.nix.
     ./myDotfiles/style.nix
-    ./myPrograms
   ];
 
   # Used to disable program inside "myPrograms" directory
