@@ -4,8 +4,10 @@ in {
   # Aliases passed to ./home-manager/myPrograms/zsh.nix.
 
   # Git
-  gl = "git log";
-  gs = "git status";
+  # I forgot that I have the "oh-my-zsh" git plugin...
+  # Most aliases are the first letter of each option available.
+  # (e.g. ga = git add; gc = git commit; ...)
+  # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md
   gsave = "git commit -am 'Checkpoint'";
 
   # Home Manager

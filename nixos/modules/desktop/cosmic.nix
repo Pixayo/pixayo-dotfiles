@@ -10,7 +10,7 @@
     # xwayland = false; # You can disable Xwayland support for the COSMIC compositor.
   };
 
-  custom.tuigreet = {
+  wrapper.tuigreet = {
     enable = true;
     flags = [
       "--time"
