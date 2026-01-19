@@ -11,7 +11,7 @@
   tuigreetcommand = lib.escapeShellArgs cfg.flags;
 in {
   option.custom.tuigreet = {
-    enable = lib.mkEnableOption "Enable greetd login manager with tuigreet TTY";
+    enable = lib.mkEnableOption "Enable greetd login manager with tuigreet";
 
     flags = lib.mkOption {
       type = lib.types.listOf lib.types.str;
