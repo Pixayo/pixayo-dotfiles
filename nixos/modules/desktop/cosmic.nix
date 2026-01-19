@@ -1,44 +1,26 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
-  # tuigreet default session command break down.
-  # See: https://github.com/apognu/tuigreet
-  tuigreetcommand = let
-    flags = [
-      "--time"
-      "--remember"
-      "--sessions /run/current-system/sw/share/wayland-sessions"
-      "--cmd cosmic-session"
-      "--greeting 'So you are finally up, huh? - Sojiro'" # Persona 5 reference!
-    ];
-  in "${pkgs.tuigreet}/bin/tuigreet ${lib.concatStringSep " " flags}";
-in {
+{pkgs, ...}: {
   # NOTE: This is a CUSTOM module for COSMIC.
   # It contains specific tweaks that may affect your experience with the
-  # COSMIC environment. Keep in mind that COSMIC is still in development.
+  # COSMIC environment.
 
-  # PERSONAL NOTE: COSMIC isn't ready for daily usage, at least not for me...
+  imports = [./login-managers/tuigreet.nix];
 
-  # Enable the COSMIC desktop environment
   services.desktopManager.cosmic = {
     enable = true;
     # xwayland = false; # You can disable Xwayland support for the COSMIC compositor.
   };
 
-  # TODO: Move Greetd/TuiGreet to its own module.
+  # TODO: Saving it for later: https://github.com/Nomadcxx/sysc-greet
 
-  # Enable Greetd/TuiGreet login manager.
-  # See the nixpgs definition: https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/display-managers/greetd.nix
-  # See also: https://man.sr.ht/~kennylevinsen/greetd/
-  services.greetd = {
+  custom.tuigreet = {
     enable = true;
-    useTextGreeter = true;
-
-    settings = {
-      default_session.command = tuigreetcommand;
-    };
+    flags = [
+      "--time"
+      "--remember"
+      "--sessions /run/current-system/sw/share/wayland-sessions"
+      "--cmd cosmic-session"
+      "--greeting So you are finally up, huh? - Sojiro" # Persona 5 reference!
+    ];
   };
 
   # Enable the COSMIC login manager

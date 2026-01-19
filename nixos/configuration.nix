@@ -73,7 +73,7 @@
     # Define users here.
     kaio = {
       isNormalUser = true;
-      description = "Default user";
+      description = "kaio";
       extraGroups = ["networkmanager" "wheel" "gamemode"];
 
       shell = pkgs.zsh;
