@@ -4,13 +4,17 @@
   ...
 }: let
   # NOTE:
-  # The attribute "desktop" declared in "data.env.desktop" is normalized.
-  # Your DE configuration file should be all lowercase.
-  # (e.g. "GNOME", "Gnome" and "gnome" will evaluate to: "[ <path-to>/gnome.nix ]")
-  desktop = lib.toLower data.env.desktop;
+  # The attribute "desktop" declared in "data.env.desktop" must be all lowercase
+  # to match the config files in this directory.
+  #
+  # I tried to make a "normalize system" to the metadata directory (aka data), but
+  # it got really complicated, so I remove it.
+  desktop = data.env.desktop;
 
   configPath = ./. + "/${desktop}.nix";
   validPath = builtins.pathExists configPath;
 in {
-  imports = assert validPath; [configPath];
+  imports = 
+    assert (lib.assertMsg validPath "Invalid 'data.env.desktop' passed: '${desktop}'");
+    [configPath];
 }

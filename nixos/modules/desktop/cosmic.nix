@@ -10,8 +10,6 @@
     # xwayland = false; # You can disable Xwayland support for the COSMIC compositor.
   };
 
-  # TODO: Saving it for later: https://github.com/Nomadcxx/sysc-greet
-
   custom.tuigreet = {
     enable = true;
     flags = [
