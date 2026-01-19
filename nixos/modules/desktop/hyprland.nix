@@ -2,23 +2,19 @@
 
   imports = [./login-managers/sysc-greet.nix];
 
+  # Enable hyprland compositor.
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users
     xwayland.enable = true;
   };
 
+  # Login manager
   wrapper.sysc-greet.enable = true;
 
-  wayland.windowManager.hyprland.systemd.enable = false;
-
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # ...
   ];
-  
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
 
   xdg.portal = {
     enable = true;
