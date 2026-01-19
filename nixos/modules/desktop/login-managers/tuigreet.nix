@@ -7,10 +7,10 @@
   # Enable Greetd/TuiGreet login manager.
   # See the nixpgs definition: https://github.com/NixOS/nixpkgs/blob/nixos-25.11/nixos/modules/services/display-managers/greetd.nix
   # See also: https://man.sr.ht/~kennylevinsen/greetd/
-  cfg = config.custom.tuigreet;
+  cfg = config.wrapper.tuigreet;
   tuigreetcommand = lib.escapeShellArgs cfg.flags;
 in {
-  option.custom.tuigreet = {
+  option.wrapper.tuigreet = {
     enable = lib.mkEnableOption "Enable greetd login manager with tuigreet";
 
     flags = lib.mkOption {
