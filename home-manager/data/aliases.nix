@@ -4,11 +4,32 @@ in {
   # Aliases passed to ./home-manager/myPrograms/zsh.nix.
 
   # Git
-  # I forgot that I have the "oh-my-zsh" git plugin...
-  # Most aliases are the first letter of each option available.
-  # (e.g. ga = git add; gc = git commit; ...)
-  # See: https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md
+  g = "git";
+  gs = "git status";
+  gl = "git log";
+  # Add
+  ga = "git add";
+  gaa = "git add .";
+  # Branch
+  gb = "git branch";
+  gbr = "git branch --remotes";
+  # Checkout
+  gco = "git checkout";
+  gcb = "git checkout -b"; # New branch
+  # Commit
+  gc = "git commit";
+  gcam = "git commit -am";
+  gcmend = "git commit --amend --no-edit";
+  gcmendm = "git commit --amend -m";
   gsave = "git commit -am 'Checkpoint'";
+  # Push
+  gp = "git push"; # Not the "gp" you want (This doesn't make sense in english).
+  gpu = "git push -u";
+  gpumain = "git push -u github main";
+  # Reset
+  gre = "git reset"; # g re -> Git Res-Et
+  # Restore
+  grt = "git restore"; # g rt -> Git Res-Tore
 
   # Home Manager
   hm = "home-manager";
@@ -34,7 +55,7 @@ in {
   rollback = "sudo nixos-rebuild switch --rollback";
 
   optimise = "sudo nix store optimise";
-  list-gens = "nixos-rebuild lisqt-generations";
+  list-gens = "nixos-rebuild list-generations";
 
   # Extra:
   # nixos-generate-config                    # Create default config files
