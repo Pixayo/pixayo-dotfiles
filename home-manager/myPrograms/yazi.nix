@@ -35,7 +35,7 @@ in {
             {
               on = ["q"];
               run = "quit";
-              desc = "Sair";
+              desc = "Exit";
             }
             {
               on = ["."];
