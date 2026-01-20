@@ -85,25 +85,25 @@ in {
           }
 
           # ───── Hardware ─────
-          {
-            type = "custom";
-            format = "";
-          }
-          {
-            type = "cpu";
-            key = "󰻠 CPU";
-            keyColor = "blue";
-          }
-          {
-            type = "gpu";
-            key = "󰢮 GPU";
-            keyColor = "blue";
-          }
-          {
-            type = "memory";
-            key = " RAM";
-            keyColor = "blue";
-          }
+          # {
+          #   type = "custom";
+          #   format = "";
+          # }
+          # {
+          #   type = "cpu";
+          #   key = "󰻠 CPU";
+          #   keyColor = "blue";
+          # }
+          # {
+          #   type = "gpu";
+          #   key = "󰢮 GPU";
+          #   keyColor = "blue";
+          # }
+          # {
+          #   type = "memory";
+          #   key = " RAM";
+          #   keyColor = "blue";
+          # }
 
           # ───── Footer ─────
           {

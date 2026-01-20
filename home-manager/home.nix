@@ -1,18 +1,24 @@
 {
   pkgs,
   data,
+  lib,
   ...
-}: {
+}: let 
+  pathToConfig = ./myDotfiles + "/${data.env.user.desktop}Config.nix";
+  hasDesktopConfig = builtins.pathExists pathToConfig;
+in {
   home.username = data.env.user.name;
   home.homeDirectory = data.env.user.homeDirectory;
 
   imports = [
+    # Programs
     ./myPrograms
     ./myPrograms/terminal
-
-    ./myDotfiles/gnomeConfig.nix # TODO: Dynamic import "dotfiles config" with metadata/default.nix.
+    
+    # "Dotfiles"
     ./myDotfiles/style.nix
-  ];
+  ]
+  ++ lib.optional hasDesktopConfig pathToConfig;
 
   # Used to disable program inside "myPrograms" directory
   myPrograms = {
@@ -28,7 +34,6 @@
     nerd-fonts.fira-mono
 
     # CLI
-    btop
     tree
   ];
 

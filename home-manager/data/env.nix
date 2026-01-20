@@ -4,6 +4,8 @@
   user = {
     name = "kaio"; # Change to your username
     homeDirectory = "/home/kaio"; # Change to your home directory path
+
+    desktop = "gnome"; # NOTE: Change "./nixos/data" too.
   };
 
   paths = {

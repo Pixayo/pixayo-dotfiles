@@ -28,15 +28,15 @@ in {
           size = 12;
 
           normal = {
-            family = "FiraMono Nerd Font";
+            family = "GeistMono Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "FiraMono Nerd Font";
+            family = "GeistMono Nerd Font";
             style = "Bold";
           };
           italic = {
-            family = "FiraMono Nerd Font";
+            family = "GeistMono Nerd Font";
             style = "Italic";
           };
         };

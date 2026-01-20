@@ -24,9 +24,7 @@ in {
         enable = true;
 
         theme = "agnoster";
-        plugins = [
-          "sudo"
-        ];
+        plugins = ["sudo"];
       };
     };
   };

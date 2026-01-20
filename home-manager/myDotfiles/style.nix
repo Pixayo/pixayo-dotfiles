@@ -19,18 +19,18 @@
 
     fonts = {
       serif = {
-        package = pkgs.adwaita-fonts;
-        name = "Adwaita Serif";
+        package = pkgs.nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
       };
 
       sansSerif = {
-        package = pkgs.adwaita-fonts;
-        name = "Adwaita Sans";
+        package = pkgs.geist-font;
+        name = "Geist";
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.fira-mono;
-        name = "FiraMono Nerd Font";
+        package = pkgs.nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
       };
 
       # emoji = { ... };
@@ -48,6 +48,7 @@
       alacritty.enable = false;
       firefox.enable = false; # DON'T TOUCH FIREFOX FOR GODSSAKE
       vscode.enable = false;
+      # btop.enable = false;
     };
 
     polarity = "dark";
