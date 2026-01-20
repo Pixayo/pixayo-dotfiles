@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A very stupid idea";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -7,11 +7,12 @@
     nixos-flake.url = "path:./nixos";
     home-flake.url = "path:./home-manager";
 
-    nixos.inputs.nixpkgs.follows = nixpkgs;
-    home-flake.inputs.nixpkgs.follows = nixpkgs;
+    # DON'T USE THIS FLAKE!
+    # For now this only exists to remember me of a idea I had when
+    # I was hearing horrible musics.
   };
 
   outputs = { self, nixpkgs }: {
-
+    # ...
   };
 }
