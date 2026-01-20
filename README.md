@@ -11,9 +11,9 @@
 
 <!-- Badges -->
 <p align="center">
-  <object name="Static Badge" data="https://img.shields.io/badge/UNSTABLE-5D8AA8?style=for-the-badge&logo=nixos&logoColor=%23f1f1f1&logoSize=auto&label=NIXOS&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
-  <img alt="Static Badge" src="https://img.shields.io/badge/GNOME-5D8AA8?style=for-the-badge&logo=gnome&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
-  <img alt="Static Badge" src="https://img.shields.io/badge/COSMIC-343434?style=for-the-badge&logo=hyprland&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
+  <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-5D8AA8?style=for-the-badge&logo=nixos&logoColor=%23f1f1f1&logoSize=auto&label=NIXOS&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
+  <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-5D8AA8?style=for-the-badge&logo=gnome&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
+  <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/COSMIC-343434?style=for-the-badge&logo=hyprland&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
 </p>
 
 <!-- Main -->
