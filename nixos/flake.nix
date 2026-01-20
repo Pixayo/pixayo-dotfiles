@@ -20,15 +20,21 @@
     data = import ./data;
 
     host = data.env.hostname;
-    system = data.env.system;
+    # mySystem = data.env.system;
   in {
     nixosConfigurations.${host} = nixpkgs.lib.nixosSystem {
-      inherit system;
+      # LEGACY: inherit system;
+      # See: https://github.com/NixOS/nixpkgs/blob/332e6030634ce7701496564d4c70ae8209919931/flake.nix#L54
 
       specialArgs = {inherit inputs data;};
       modules = [
         ./configuration.nix
         sysc-greet.nixosModules.default
+
+        # NOTE: 
+        # This is already set in "./hardware-configuration.nix".
+        # There is no need to overwrite this attribute (at least not for me).
+        # { nixpkgs.hostPlatform = { system = mySystem; };}
       ];
     };
   };

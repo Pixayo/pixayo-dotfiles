@@ -32,6 +32,7 @@
     {device = "/dev/disk/by-uuid/597c55e8-a2b3-444b-be68-575c44b7a7b9";}
   ];
 
+  # Specifies the platform where the NixOS configuration will run.
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

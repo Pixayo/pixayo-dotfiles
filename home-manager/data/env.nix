@@ -5,7 +5,7 @@
     name = "kaio"; # Change to your username
     homeDirectory = "/home/kaio"; # Change to your home directory path
 
-    desktop = "gnome"; # NOTE: Change "./nixos/data" too.
+    desktop = "hyprland"; # NOTE: Change "./nixos/data" too.
   };
 
   paths = {
