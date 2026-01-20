@@ -1,5 +1,9 @@
 let
   env = import ./env.nix;
+  home = env.paths.home;
+  user = env.user.name;
+  nixos = env.paths.system;
+  host = env.host;
 in {
   # Aliases passed to ./home-manager/myPrograms/zsh.nix.
 
@@ -33,25 +37,25 @@ in {
 
   # Home Manager
   hm = "home-manager";
-  cdhm = "cd ${env.paths.home}";
+  cdhm = "cd ${home}";
 
-  hmr = "home-manager switch --flake ${env.paths.home}#${env.user.name}"; # clobbered erro: "-b backup"
-  hmupdate = "nix flake update --flake ${env.paths.home}";
+  hmr = "home-manager switch --flake ${home}#${user}"; # clobbered erro: "-b backup"
+  hmupdate = "nix flake update --flake ${home}";
 
-  hmtest = "home-manager build --flake ${env.paths.home}#${env.user.name}";
+  hmtest = "home-manager build --flake ${home}#${user}";
   hmrollback = "home-manager switch --rollback";
 
   hmclean = "nix-collect-garbage --delete-old";
-  hmshow = "nix flake show ${env.paths.home}";
+  hmshow = "nix flake show ${home}";
   hmgen = "home-manager generations";
 
   # NixOS management
-  cdc = "cd ${env.paths.system}";
+  cdc = "cd ${nixos}";
 
-  rebuild = "sudo nixos-rebuild switch --flake ${env.paths.system}#nixos";
-  update = "sudo nix flake update --flake ${env.paths.system}";
+  rebuild = "sudo nixos-rebuild switch --flake ${nixos}#${host}";
+  update = "sudo nix flake update --flake ${nixos}";
 
-  test-rebuild = "sudo nixos-rebuild test --flake ${env.paths.system}";
+  test-rebuild = "sudo nixos-rebuild test --flake ${nixos}";
   rollback = "sudo nixos-rebuild switch --rollback";
 
   optimise = "sudo nix store optimise";

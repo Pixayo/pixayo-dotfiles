@@ -5,7 +5,7 @@
     name = "kaio"; # Change to your username
     homeDirectory = "/home/kaio"; # Change to your home directory path
 
-    desktop = "hyprland"; # NOTE: Change "./nixos/data" too.
+    desktop = "gnome"; # NOTE: Change "./nixos/data" too.
   };
 
   paths = {
@@ -13,5 +13,6 @@
     system = "/etc/nixos";
   };
 
+  host = "nixos"; # hostname of your machine.
   system = "x86_64-linux"; # Change to match your system architecture
 }

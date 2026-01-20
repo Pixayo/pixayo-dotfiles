@@ -3,12 +3,13 @@
 
   hostname = "nixos";
 
-  # NOTE: It is "used" for overwriting "nixpkgs.hostPlatform.system" declared in
-  # the hardware configuration file. For now, changing "system" doesn't do a thing.
-  system = "x86_64-linux";
+  # NOTE: it is "used" for overwriting "nixpkgs.hostPlatform.system" declared in
+  # the hardware configuration file. For now, changing "system" doesn't do a thing, and
+  # if you don't have a good reason to do so, don't change it!
+  # system = "x86_64-linux";
 
   # NOTE: "desktop" is used to find a desktop config module defined in: "./nixos/modules/desktop"
-  desktop = "hyprland"; # NOTE: Change "./home-manager/data" too.
+  desktop = "gnome"; # NOTE: Change "./home-manager/data" too.
 
   # NOTE: Check users declaration in configuration.nix
 

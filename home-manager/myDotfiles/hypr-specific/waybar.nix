@@ -1,4 +1,4 @@
-{data, ...}: {
+{...}: {
   programs.waybar = {
     enable = true;
     settings = {
