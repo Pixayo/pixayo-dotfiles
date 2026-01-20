@@ -7,8 +7,8 @@
   pathToConfig = ./myDotfiles + "/${data.users.current.desktop}Config.nix";
   hasDesktopConfig = builtins.pathExists pathToConfig;
 in {
-  home.username = data.env.user.name;
-  home.homeDirectory = data.env.user.homeDirectory;
+  home.username = data.users.current.name;
+  home.homeDirectory = data.users.current.homeDirectory;
 
   imports = [
     # Programs

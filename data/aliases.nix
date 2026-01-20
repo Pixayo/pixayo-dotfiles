@@ -1,9 +1,12 @@
 let
   env = import ./env.nix;
+  users = import ./users.nix;
+
   home = env.paths.home;
-  user = env.users.current.name;
+  user = users.current.name;
+
   nixos = env.paths.system;
-  host = env.host;
+  host = env.hostname;
 in {
   # Aliases passed to ./home-manager/myPrograms/zsh.nix.
 

@@ -23,9 +23,9 @@
   }: let
     data = import ../data;
 
-    system = data.env.system;
     user = data.users.current.name;
 
+    system = data.env.system;
     pkgs = import nixpkgs {
       inherit system;
 
