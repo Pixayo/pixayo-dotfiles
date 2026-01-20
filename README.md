@@ -37,24 +37,29 @@ My system is intent to be portable and adaptable, supporting multiple users or j
 ```text
 ├── assets
 │   └── ...
-├── data
+│
+├── data -> Metadata shared between "home-manager" and "nixos"
 │   ├── aliases.nix
 │   ├── default.nix
 │   ├── env.nix
 │   └── users.nix
-├── home-manager
+│
+├── home-manager -> standalone home-manager config
 │   ├── flake.lock
 │   ├── flake.nix
 │   ├── home.nix
 │   └── ...
-├── nixos
+│
+├── nixos -> NixOS system configuration
 │   ├── flake.lock
 │   ├── flake.nix
 │   ├── configuration.nix
 │   ├── hardware-configuration.nix
 │   └── ...
-├── template
+│
+├── template -> reusable modules/structures
 │   └── ...
+│
 └── flake.nix (ignore me, for now)
 ```
 
