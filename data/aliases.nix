@@ -69,5 +69,5 @@ let
   };
 in {
   # NOTE: Remove one or more sets to exclude specific aliases groups.
-  aliases = gitAliases // homeAliases // nixosAliases;
+  set = gitAliases // homeAliases // nixosAliases;
 }

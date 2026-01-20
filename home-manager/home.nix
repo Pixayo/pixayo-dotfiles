@@ -6,6 +6,7 @@
 }: let 
   pathToConfig = ./myDotfiles + "/${data.users.current.desktop}Config.nix";
   hasDesktopConfig = builtins.pathExists pathToConfig;
+  ConfigNotFound = lib.warnIf (! hasDesktopConfig) "Couldn't locate '${pathToConfig}'" 1;
 in {
   home.username = data.users.current.name;
   home.homeDirectory = data.users.current.homeDirectory;

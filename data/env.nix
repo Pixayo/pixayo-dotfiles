@@ -4,6 +4,7 @@
   paths = {
     home = "~/.config/home-manager";
     system = "/etc/nixos";
+    # data = "/etc/nixos/data"; # PLACEHOLDER
   };
 
   hostname = "nixos"; # hostname of your machine.

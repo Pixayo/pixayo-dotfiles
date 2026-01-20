@@ -18,7 +18,7 @@ in {
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      shellAliases = data.aliases;
+      shellAliases = data.aliases.set;
 
       oh-my-zsh = {
         enable = true;
