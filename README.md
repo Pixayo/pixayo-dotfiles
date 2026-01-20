@@ -11,7 +11,14 @@
 
 <!-- Badges -->
 <p align="center">
-  <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-CD5700?style=for-the-badge&logo=nixos&logoColor=F1F1F1&logoSize=auto&label=NIXOS&labelColor=242424&color=F3E9D8"> * 
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/UNSTABLE-CD5700?style=for-the-badge&logo=nixos&logoColor=F1F1F1&logoSize=auto&label=NIXOS&labelColor=242424&color=F3E9D8">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/ignore/banner-light.png">
+    <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/banner-dark.png">
+  </picture>
+
+  <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-CD5700?style=for-the-badge&logo=nixos&logoColor=F1F1F1&logoSize=auto&label=NIXOS&labelColor=242424&color=F3E9D8">
+  
   <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-CD5700?style=for-the-badge&logo=gnome&logoColor=242424&logoSize=auto&color=F3E9D8"> 
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/HYPRLAND-CD5700?style=for-the-badge&logo=hyprland&logoColor=242424&logoSize=auto&color=F3E9D8">
 </p>
@@ -31,8 +38,7 @@ My system is intent to be portable and adaptable, supporting multiple users or j
 
 ### Repository structure
 
-> [!CAUTION]
-> Sometimes I can just forget to update the readme and push a lot of crap to "main" without any explanation...
+> **NOTE**: Sometimes I can just forget to update the readme and push a lot of crap to "main" without any explanation...
 
 ```text
 ├── assets
@@ -86,7 +92,8 @@ DON'T USE IT! I'm working on it...
 The `wallpapers/` directory in `assets/` has wallpapers that I made myself with Aseprite, some of them are not
 completely mine, but rather pixel art versions of other arts/characters.
 
-the ones that are not 100% original have an initial `prefix` that can identify the original artist or source.
+The ones that are not 100% original have an initial `prefix` that can help identify the original artist or
+source.
 
 For example: `joyful-frog-wallpaper-...` will (probably) lead you to [this guy](https://www.youtube.com/channel/UCKdaljhUfgWil_fSm81iZCw) if you search for "joyful" or "joyful frog".
 
