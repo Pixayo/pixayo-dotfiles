@@ -4,7 +4,7 @@
   lib,
   ...
 }: let 
-  pathToConfig = ./myDotfiles + "/${data.env.user.desktop}Config.nix";
+  pathToConfig = ./myDotfiles + "/${data.users.current.desktop}Config.nix";
   hasDesktopConfig = builtins.pathExists pathToConfig;
 in {
   home.username = data.env.user.name;

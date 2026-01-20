@@ -9,7 +9,7 @@
   #
   # I tried to make a "normalize system" to the metadata directory (aka data), but
   # it got really complicated, so I remove it.
-  desktop = data.env.desktop;
+  desktop = data.users.current.desktop;
 
   configPath = ./. + "/${desktop}.nix";
   validPath = builtins.pathExists configPath;

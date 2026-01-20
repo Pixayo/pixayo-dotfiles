@@ -17,7 +17,7 @@
   # TODO: Make a safety lock in case "desktop" isn't a valid wayland compositor.
 
   cfg = config.wrapper.sysc-greet;
-  desktop = data.env.desktop;
+  desktop = data.users.current.desktop;
 in {
   options.wrapper.sysc-greet.enable = lib.mkEnableOption "Enable greetd login manager with sysc-greet";
 

@@ -24,7 +24,7 @@
     data = import ../data;
 
     system = data.env.system;
-    user = data.env.user.name;
+    user = data.users.current.name;
 
     pkgs = import nixpkgs {
       inherit system;

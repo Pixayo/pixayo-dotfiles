@@ -6,6 +6,6 @@
     system = "/etc/nixos";
   };
 
-  host = "nixos"; # hostname of your machine.
+  hostname = "nixos"; # hostname of your machine.
   system = "x86_64-linux"; # Change to match your system architecture
 }
