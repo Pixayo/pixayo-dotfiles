@@ -1,5 +1,5 @@
 {
-  # Metadata for home environment configuration
+  # Environment (env) metadata
 
   paths = {
     home = "~/.config/home-manager";

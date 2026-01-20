@@ -1,5 +1,5 @@
 {
-  description = "A very stupid idea";
+  description = "(Maybe) a very stupid idea";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

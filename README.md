@@ -1,5 +1,6 @@
-<!-- Default README (English) -->
+<!-- Default README -->
 
+<!-- Theme sensitive banner -->
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/ignore/banner-dark.png">
@@ -8,18 +9,15 @@
   </picture>
 </p>
 
+<!-- Badges -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Nix-Flakes-7EBAE4?style=for-the-badge&logo=nixos&logoColor=white">
-  <!-- <img src="https://img.shields.io/badge/Hyprland-Wayland-00C2FF?style=for-the-badge"> -->
-  <img src="https://img.shields.io/badge/GNOME-4A86CF?style=for-the-badge&logo=gnome&logoColor=white">
+  <object name="Static Badge" data="https://img.shields.io/badge/UNSTABLE-5D8AA8?style=for-the-badge&logo=nixos&logoColor=%23f1f1f1&logoSize=auto&label=NIXOS&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
+  <img alt="Static Badge" src="https://img.shields.io/badge/GNOME-5D8AA8?style=for-the-badge&logo=gnome&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
+  <img alt="Static Badge" src="https://img.shields.io/badge/COSMIC-343434?style=for-the-badge&logo=hyprland&logoColor=%23f1f1f1&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FNixOS%2Fnixpkgs">
 </p>
 
+<!-- Main -->
 ---
-
-<p>
-  <a href="README.md">EN</a> |
-  <a href="README.pt-br.md">PT-BR</a>
-</p>
 
 ## About
 
@@ -28,55 +26,86 @@ This repository is a collection of Nix files meant to define and manage my perso
 Something like this could (and probably should) be private. However, I decided to make it public to share my
 experience using NixOS and, hopefully, serve as a source of information for other users.
 
-For that reason, this repository is not just a pile of obscure configurations. Most decisions and changes
-are documented to some extent, either through README files and other Markdown documents or directly within
-the code itself. I plan to keep expanding this documentation over time.
-
 ## Content
 
-My system is designed to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
+My system is intent to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
 
 ### Repository structure
 
+> [!CAUTION]
+> Sometimes I can just forget to update the readme and push a lot of crap to "main" without any explanation...
+
 ```text
-├── assets -> Visual resources and non-essential utilities
+├── assets
 │   └── ...
-├── home-manager -> User environment configuration
-│   ├── data -> Home environment metadata
+├── data
+│   ├── aliases.nix
+│   ├── default.nix
+│   ├── env.nix
+│   └── users.nix
+├── home-manager
+│   ├── flake.lock
+│   ├── flake.nix
+│   ├── home.nix
 │   └── ...
-├── nixos -> NixOS system configuration
-│   ├── data -> System metadata
+├── nixos
+│   ├── flake.lock
+│   ├── flake.nix
+│   ├── configuration.nix
+│   ├── hardware-configuration.nix
 │   └── ...
-└── template -> Reusable templates
-    └── ...
+├── template
+│   └── ...
+└── flake.nix (ignore me, for now)
 ```
 
-The `nixos` and `home-manager` directories are independent and can be used separately. Both include their own `flake` module, which provides essential resources for their submodules, making replication on other machines and Linux systems using the Nix package manager much more intuitive.
+Both `nixos` and `home-manager` are independent, dividing home from system environment; however, they need
+some shared metadata to function. You can find those in the `data` directory, and even change some attributes
+for your own usage.
 
-In particular, the `data` directories do not define behavior; they only retain mutable data for their
-respective environments. In `home-manager`, for example: the file `./home-manager/data/env.nix` contains user-related data such as name, `home`, important `paths`, and even the system architecture, which is passed to `nixpkgs`.
+The idea is that you can retain full control over your home/system config, building them separately, testing,
+experimenting, and still be able to share data among them. Something that isn't possible without relying
+on the NixOS Home Manager module integration (I can be wrong).
 
-On the other hand, `assets`, `template`, and essentially any other directory that is not one of the two main ones, do not serve a technical purpose. Although they may contain scripts and other utilities, they are not
-required for the system to function.
+But how does it works? It is quite simple:
+
+`data` feeds each `flake` with mutable data about the system/home environment, giving them some sort of
+connection. Each `flake` then pins its own dependencies (`inputs`) like: `nixpkgs`, `stylix`, ... ;
+essentially making the config itself generic... mostly... I am working on that...
+
+You: "Alright, but, what about the main `flake` in the repo..."
+
+DON'T USE IT! I'm working on it...
 
 ### About wallpapers
 
-The implementation of wallpapers in the assets directory may seem disconnected from the repository’s main goal, but this is a personal choice. Whenever I need to apply my system to another machine or "nuke" an existing one, I prefer to have everything versioned in a single place. This speeds up the replication process and simplifies installation scripts.
+The `wallpapers/` directory in `assets/` has wallpapers that I made myself with Aseprite, some of them are not
+completely mine, but rather pixel art versions of other arts/characters.
 
-Feel free to use them.
+the ones that are not 100% original have an initial `prefix` that can identify the original artist or source.
 
-## Visuals
+For example: `joyful-frog-wallpaper-...` will (probably) lead you to [this guy](https://www.youtube.com/channel/UCKdaljhUfgWil_fSm81iZCw) if you search for "joyful" or "joyful frog".
 
-All the visual identity of my setup comes from `home-manager` + `stilyx`. You can see more details in the `./home-manager/myDotfiles` directory.
+## Visual
+
+All the visual identity of my setup comes from `home-manager` + `stylix`. You can see more details in the `./home-manager/myDotfiles`.
+
+### GNOME
 
 <p align="center"> 
-  <img src="./assets/ignore/screenshot1.png">
-  <img src="./assets/ignore/screenshot2.png">
-  <img src="./assets/ignore/screenshot3.png">
+  <img 
+    alt = "screenshot1 of my desktop, I can't be more precise than that..." 
+    src="./assets/ignore/screenshot1.png" width="32%">
+  <img 
+    alt = "screenshot2 of my desktop, I can't be more precise than that..." 
+    src="./assets/ignore/screenshot2.png" width="32%">
+  <img 
+    alt = "screenshot3 of my desktop, I can't be more precise than that..." 
+    src="./assets/ignore/screenshot3.png" width="32%">
 </p>
 
 ## Installation
 
-> Only in pt-br for now.
+> Work in progress...
 
-## ...
+## WIP
