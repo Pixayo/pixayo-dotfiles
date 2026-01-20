@@ -28,7 +28,7 @@ experience using NixOS and, hopefully, serve as a source of information for othe
 
 ## Content
 
-My system is intent to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
+My system is intended to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
 
 ### Repository structure
 
@@ -71,7 +71,7 @@ The idea is that you can retain full control over your home/system config, build
 experimenting, and still be able to share data among them. Something that isn't possible without relying
 on the NixOS Home Manager module integration (I can be wrong).
 
-But how does it works? It is quite simple:
+But how does it work? It is quite simple:
 
 `data` feeds each `flake` with mutable data about the system/home environment, giving them some sort of
 connection. Each `flake` then pins its own dependencies (`inputs`) like: `nixpkgs`, `stylix`, ... ;
@@ -109,8 +109,29 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
     src="./assets/ignore/screenshot3.png" width="48%">
 </p>
 
+### Hyprland (WIP)
+
+...
+
+### COSMIC (WIP)
+
+...
+
 ## Installation
 
-> Work in progress...
+This setup is not ready (yet). If you are curious, the most relevant entry points are:
+
+- `data/default.nix`
+- `home-manager/flake.nix`
+- `nixos/flake.nix`
+
+If you know how flakes work, you can build my system yourself without many issues. Currently I am not
+working on an installation script or guide, so you are (mostly) on your own, but at least I can give some
+direction.
+
+1. Flakes aren't sufficient, you need the `data/` directory or at least a modified copy of it. If you skip this step, you will need to overwrite a bunch of values both in `nixos/` and in `home-manager`.
+2. You don't need both `nixos/` and `home-manager/` to be in the same directory, but make sure that they can access `data/`.
+3. Try changing values in `data/`, for example: switch "desktop" from `GNOME` to `COSMIC` and see what it does.
+4. There are some comments scattered around. Go read them all!
 
 ## WIP

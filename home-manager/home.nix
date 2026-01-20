@@ -5,8 +5,7 @@
   ...
 }: let 
   pathToConfig = ./myDotfiles + "/${data.users.current.desktop}Config.nix";
-  hasDesktopConfig = builtins.pathExists pathToConfig;
-  ConfigNotFound = lib.warnIf (! hasDesktopConfig) "Couldn't locate '${pathToConfig}'" 1;
+  pathExists = (builtins.pathExists pathToConfig);
 in {
   home.username = data.users.current.name;
   home.homeDirectory = data.users.current.homeDirectory;
@@ -19,7 +18,7 @@ in {
     # "Dotfiles"
     ./myDotfiles/style.nix
   ]
-  ++ lib.optional hasDesktopConfig pathToConfig;
+  ++ lib.optional pathExists pathToConfig;
 
   # Used to disable program inside "myPrograms" directory
   myPrograms = {
