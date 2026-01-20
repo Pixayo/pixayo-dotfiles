@@ -94,13 +94,13 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
 <p align="center"> 
   <img 
     alt = "screenshot1 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot1.png" width="32%">
+    src="./assets/ignore/screenshot1.png" width="33%">
   <img 
     alt = "screenshot2 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot2.png" width="32%">
+    src="./assets/ignore/screenshot2.png" width="33%">
   <img 
     alt = "screenshot3 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot3.png" width="32%">
+    src="./assets/ignore/screenshot3.png" width="33%">
 </p>
 
 ## Installation
