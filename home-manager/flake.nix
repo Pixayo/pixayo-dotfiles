@@ -21,7 +21,7 @@
     stylix,
     ...
   }: let
-    data = import ./data;
+    data = import ../data;
 
     system = data.env.system;
     user = data.env.user.name;

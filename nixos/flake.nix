@@ -17,7 +17,7 @@
     sysc-greet, # TUI greeter for Greetd.
     ...
   } @ inputs: let
-    data = import ./data;
+    data = import ../data; 
 
     host = data.env.hostname;
     # mySystem = data.env.system;

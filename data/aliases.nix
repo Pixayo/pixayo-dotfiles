@@ -1,7 +1,7 @@
 let
   env = import ./env.nix;
   home = env.paths.home;
-  user = env.user.name;
+  user = env.users.current.name;
   nixos = env.paths.system;
   host = env.host;
 in {
