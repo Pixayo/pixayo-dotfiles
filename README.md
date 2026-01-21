@@ -110,7 +110,7 @@ My system is intended to be portable and adaptable, supporting multiple users or
 ```
 
 Both `nixos` and `home-manager` are independent, dividing home from system environment; however, they need
-some shared metadata to function. You can find those in the `data` directory, and even change some attributes
+some shared metadata to function. You can find those in the `data/` directory, and even change some attributes
 for your own usage.
 
 The `data/` directory is used in both system and home configurations. I use it to solve a very specific problem: **Sharing data between two independent** `flakes` **without bounding them.**
