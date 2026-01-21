@@ -98,20 +98,25 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
 
 ### GNOME
 
-<p align="center"> 
-  <img 
-    alt = "screenshot1 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot1.png" width="48%">
-  <img 
-    alt = "screenshot2 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot2.png" width="48%">
-  <img 
-    alt = "screenshot3 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot3.png" width="48%">
-  <img 
-    alt = "screenshot3 of my desktop, I can't be more precise than that..." 
-    src="./assets/ignore/screenshot4.png" width="48%">
-</p>
+<!-- Use a table for 2x2 grid display  -->
+<table align="center"> 
+  <tr>
+    <td width="50%">
+      <img alt="screenshot1" src="./assets/ignore/screenshot1.png">
+    </td>
+    <td width="50%">
+      <img alt="screenshot2" src="./assets/ignore/screenshot2.png">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img alt="screenshot3" src="./assets/ignore/screenshot3.png">
+    </td>
+    <td width="50%">
+      <img alt="screenshot4" src="./assets/ignore/screenshot4.png">
+    </td>
+  </tr>
+</table>
 
 ### Hyprland (WIP)
 
