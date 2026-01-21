@@ -1,23 +1,23 @@
 <!-- Default README -->
 
 <!-- Theme sensitive banner -->
-<p align="center">
+<p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/ignore/banner-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="./assets/ignore/banner-light.png">
     <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/banner-dark.png">
   </picture>
-</p>
+
 
 <!-- Badges -->
-<p align="center">
+<p>
   <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-f3e9d8?style=for-the-badge&logo=nixos&logoColor=f3e9d8&logoSize=auto&label=NIXOS&labelColor=2A2732&color=2A2732">
   <img alt="Static Badge WIP" src="https://img.shields.io/badge/WIP-2A2732?style=for-the-badge">
   <br>
   <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-CD5700?style=for-the-badge&logo=gnome&logoColor=242424&logoSize=auto&color=F3E9D8"> 
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/HYPRLAND-CD5700?style=for-the-badge&logo=hyprland&logoColor=242424&logoSize=auto&color=F3E9D8">
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/COSMIC-CD5700?style=for-the-badge&logo=system76&logoColor=242424&logoSize=auto&color=F3E9D8">  
-</p>
+
 
 <!-- Main -->
 
@@ -27,6 +27,50 @@ This repository is a collection of Nix files meant to define and manage my perso
 
 Something like this could (and probably should) be private. However, I decided to make it public to share my
 experience using NixOS and, hopefully, serve as a source of information for other users.
+
+<!-- Components table -->
+<table align="center" style="width:50%">
+  <thead>
+    <tr>
+      <th><div align="center">Components</div></th>
+      <th><div align="center">Source</div></th>
+    </tr>
+  </thead>
+  <tbody align="center">
+    <tr>
+      <td>Main desktop environment</td>
+      <td><a href="https://www.gnome.org">GNOME</a></td>
+    </tr>
+    <tr>
+      <td>Alternative environments</td>
+      <td>HYPRLAND / COSMIC</td>
+    </tr>
+    <tr>
+      <td>File Manager</td>
+      <td><a href="https://yazi-rs.github.io/">Yazi</a></td>
+    </tr>
+    <tr>
+      <td>Terminal emulator</td>
+      <td><a href="https://github.com/alacritty/alacritty">Alacritty</a></td>
+    </tr>
+    <tr>
+      <td>Shell</td>
+      <td><a href="https://zsh.sourceforge.io">Zsh</a></td>
+    </tr>
+    <tr>
+      <td>Editor</td>
+      <td><a href="https://vscodium.com/">VSCodium</a></td>
+    </tr>
+    <tr>
+      <td>Base16 scheme</td>
+      <td><a href="https://github.com/warpdotdev/themes/blob/main/base16/base16_gruvbox_dark_hard.yaml">Gruvbox</a></td>
+    </tr>
+    <tr>
+      <td>Styling framework</td>
+      <td><a href="https://github.com/nix-community/stylix">Stylix</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Content
 
@@ -100,22 +144,14 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
 ### GNOME
 
 <!-- Use a table for 2x2 grid display  -->
-<table align="center"> 
+<table> 
   <tr>
-    <td width="50%">
-      <img alt="screenshot1" src="./assets/ignore/screenshot1.png">
-    </td>
-    <td width="50%">
-      <img alt="screenshot2" src="./assets/ignore/screenshot2.png">
-    </td>
+    <td width="50%"><img alt="screenshot1" src="./assets/ignore/screenshot1.png"></td>
+    <td width="50%"><img alt="screenshot2" src="./assets/ignore/screenshot2.png"></td>
   </tr>
   <tr>
-    <td width="50%">
-      <img alt="screenshot3" src="./assets/ignore/screenshot3.png">
-    </td>
-    <td width="50%">
-      <img alt="screenshot4" src="./assets/ignore/screenshot4.png">
-    </td>
+    <td width="50%"><img alt="screenshot3" src="./assets/ignore/screenshot3.png"></td>
+    <td width="50%"><img alt="screenshot4" src="./assets/ignore/screenshot4.png"></td>
   </tr>
 </table>
 
@@ -142,6 +178,7 @@ direction.
 1. Flakes aren't sufficient, you need the `data/` directory or at least a modified copy of it. If you skip this step, you will need to overwrite a bunch of values both in `nixos/` and in `home-manager`.
 2. You don't need both `nixos/` and `home-manager/` to be in the same directory, but make sure that they can access `data/`.
 3. Try changing values in `data/`, for example: switch "desktop" from `GNOME` to `COSMIC` and see what it does.
-4. There are some comments scattered around. Go read them all!
+4. You can find some of the commands listed in `data/aliases.nix` useful for rebuilding my system.
+5. There are some comments scattered around. Go read them all!
 
 ## WIP
