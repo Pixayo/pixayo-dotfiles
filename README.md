@@ -15,6 +15,7 @@
   <br>
   <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-CD5700?style=for-the-badge&logo=gnome&logoColor=242424&logoSize=auto&color=F3E9D8"> 
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/HYPRLAND-CD5700?style=for-the-badge&logo=hyprland&logoColor=242424&logoSize=auto&color=F3E9D8">
+  <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/COSMIC-CD5700?style=for-the-badge&logo=system76&logoColor=242424&logoSize=auto&color=F3E9D8">  
 </p>
 
 <!-- Main -->
@@ -93,7 +94,7 @@ For example: `joyful-frog-wallpaper-...` will (probably) lead you to [this guy](
 
 ## Visual
 
-All the visual identity of my setup comes from `home-manager` + `stylix`. You can see more details in the `./home-manager/myDotfiles`.
+All the visual identity of my setup comes from `home-manager` + `stylix`. You can see more details in `./home-manager/myDotfiles`.
 
 ### GNOME
 
@@ -107,6 +108,9 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
   <img 
     alt = "screenshot3 of my desktop, I can't be more precise than that..." 
     src="./assets/ignore/screenshot3.png" width="48%">
+  <img 
+    alt = "screenshot3 of my desktop, I can't be more precise than that..." 
+    src="./assets/ignore/screenshot4.png" width="48%">
 </p>
 
 ### Hyprland (WIP)
