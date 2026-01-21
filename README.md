@@ -12,6 +12,7 @@
 <!-- Badges -->
 <p align="center">
   <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-f3e9d8?style=for-the-badge&logo=nixos&logoColor=f3e9d8&logoSize=auto&label=NIXOS&labelColor=2A2732&color=2A2732">
+  <img alt="Static Badge WIP" src="https://img.shields.io/badge/WIP-2A2732?style=for-the-badge">
   <br>
   <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-CD5700?style=for-the-badge&logo=gnome&logoColor=242424&logoSize=auto&color=F3E9D8"> 
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/HYPRLAND-CD5700?style=for-the-badge&logo=hyprland&logoColor=242424&logoSize=auto&color=F3E9D8">
