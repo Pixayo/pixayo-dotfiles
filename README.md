@@ -10,7 +10,7 @@
 
 
 <!-- Badges -->
-<p>
+<p align="center">
   <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-f3e9d8?style=for-the-badge&logo=nixos&logoColor=f3e9d8&logoSize=auto&label=NIXOS&labelColor=2A2732&color=2A2732">
   <img alt="Static Badge WIP" src="https://img.shields.io/badge/WIP-2A2732?style=for-the-badge">
   <br>
