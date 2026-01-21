@@ -3,7 +3,7 @@
 
   paths = {
     home = "~/.config/home-manager";
-    system = "/etc/nixos";
+    nixos = "/etc/nixos";
     # data = "/etc/nixos/data"; # PLACEHOLDER
   };
 

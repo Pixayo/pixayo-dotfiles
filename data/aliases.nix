@@ -3,11 +3,11 @@ let
   env = import ./env.nix;
   users = import ./users.nix;
 
-  # Abstracting for better readability of aliases.
+  # Reducing values "path".
   home = env.paths.home;
   user = users.current.name;
 
-  nixos = env.paths.system;
+  nixos = env.paths.nixos;
   host = env.hostname;
 
   # Aliases groups
