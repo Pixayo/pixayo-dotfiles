@@ -113,6 +113,12 @@ Both `nixos` and `home-manager` are independent, dividing home from system envir
 some shared metadata to function. You can find those in the `data` directory, and even change some attributes
 for your own usage.
 
+The `data/` directory is used in both system and home configurations. I use it to solve a very specific problem: **Sharing data between two independent** `flakes` **without bounding them.**
+
+Why would you want to do that? For **portability**. You can reuse this configuration on other Linux
+distributions using only the `data/` and `home-manager/` directories. If you later move back to NixOS, you can
+reconnect everything with just a few minor adjustments.
+
 The idea is that you can retain full control over your home/system config, building them separately, testing,
 experimenting, and still be able to share data among them. Something that isn't possible without relying
 on the NixOS Home Manager module integration (I can be wrong).
@@ -123,7 +129,7 @@ But how does it work? It is quite simple:
 connection. Each `flake` then pins its own dependencies (`inputs`) like: `nixpkgs`, `stylix`, ... ;
 essentially making the config itself generic... mostly... I am working on that...
 
-You: "Alright, but, what about the main `flake` in the repo..."
+You: "Alright, but what about the main `flake` in the repo..."
 
 DON'T USE IT! I'm working on it...
 
