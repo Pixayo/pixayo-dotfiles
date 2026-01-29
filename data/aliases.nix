@@ -3,11 +3,11 @@ let
   env = import ./env.nix;
   users = import ./users.nix;
 
-  # Reducing values "path".
+  # local variables.
   home = env.paths.home;
-  user = users.current.name;
-
   nixos = env.paths.nixos;
+
+  user = users.current.name;
   host = env.hostname;
 
   # Aliases groups

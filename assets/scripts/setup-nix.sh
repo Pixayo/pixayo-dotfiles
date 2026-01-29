@@ -113,5 +113,3 @@ move_and_link "$HM_TARGET" "$HM_SOURCE" false
 printf "\n"
 
 printf "${BLUE}DONE${RESET}: Check: %s\n" "$SOURCE_DIR"
-
-# Coding in shell script is kinda fun...

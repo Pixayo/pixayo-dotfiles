@@ -17,7 +17,7 @@
     sysc-greet, # TUI greeter for Greetd.
     ...
   } @ inputs: let
-    data = import ../data; 
+    data = import ../data;
 
     host = data.env.hostname;
     # mySystem = data.env.system;
@@ -31,7 +31,7 @@
         ./configuration.nix
         sysc-greet.nixosModules.default
 
-        # NOTE: 
+        # NOTE:
         # This is already set in "./hardware-configuration.nix".
         # There is no need to overwrite this attribute (at least not for me).
         # { nixpkgs.hostPlatform = { system = mySystem; };}

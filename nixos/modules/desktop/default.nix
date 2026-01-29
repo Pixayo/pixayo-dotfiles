@@ -9,16 +9,12 @@
   #
   # I tried to make a "normalize system" to the metadata directory (aka data), but
   # it got really complicated, so I remove it.
-
   # This is a special "default.nix".
-
   user = data.users.current.name;
   desktop = data.users.current.desktop;
 
   configPath = ./. + "/${desktop}.nix";
   validPath = builtins.pathExists configPath;
 in {
-  imports = 
-    assert (lib.assertMsg validPath "Invalid 'data.users.${user}.desktop' attribute: '${desktop}'");
-    [configPath];
+  imports = assert (lib.assertMsg validPath "Invalid 'data.users.${user}.desktop' attribute: '${desktop}'"); [configPath];
 }

@@ -32,10 +32,10 @@
         // TIP: use "nix repl" to evaluate paths!
 
         "nixos": {
-          "expr": "(builtins.getFlake \"<path/to/system/flake>\").nixosConfigurations.<HOST>.options"
+          "expr": "(builtins.getFlake \"<PATH/TO/SYSTEM/FLAKE>\").nixosConfigurations.<HOST>.options"
         },
         "home-manager": {
-          "expr": "(builtins.getFlake \"<path/to/home/flake>\").homeConfigurations.<USER>.options"
+          "expr": "(builtins.getFlake \"<PATH/TO/HOME/FLAKE>\").homeConfigurations.<USER>.options"
         }
       },
       "diagnostic": {

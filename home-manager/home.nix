@@ -3,22 +3,23 @@
   data,
   lib,
   ...
-}: let 
+}: let
   pathToConfig = ./myDotfiles + "/${data.users.current.desktop}Config.nix";
-  pathExists = (builtins.pathExists pathToConfig);
+  pathExists = builtins.pathExists pathToConfig;
 in {
   home.username = data.users.current.name;
   home.homeDirectory = data.users.current.homeDirectory;
 
-  imports = [
-    # Programs
-    ./myPrograms
-    ./myPrograms/terminal
-    
-    # "Dotfiles"
-    ./myDotfiles/style.nix
-  ]
-  ++ lib.optional pathExists pathToConfig;
+  imports =
+    [
+      # Programs
+      ./myPrograms
+      ./myPrograms/terminal
+
+      # "Dotfiles"
+      ./myDotfiles/style.nix
+    ]
+    ++ lib.optional pathExists pathToConfig;
 
   # Used to disable program inside "myPrograms" directory
   myPrograms = {

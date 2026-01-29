@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   imports = [./login-managers/sysc-greet.nix];
 
   # Enable hyprland compositor.
@@ -18,6 +17,6 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
+    extraPortals = with pkgs; [xdg-desktop-portal-hyprland];
   };
 }

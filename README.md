@@ -1,23 +1,23 @@
 <!-- Default README -->
 
 <!-- Theme sensitive banner -->
-<p>
+<div>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/ignore/banner-dark.png">
     <source media="(prefers-color-scheme: light)" srcset="./assets/ignore/banner-light.png">
     <img alt="Pixayo Dotfiles - NixOS / Home Manager Setup" src="./assets/banner-dark.png">
   </picture>
-
+</div>
 
 <!-- Badges -->
-<p align="center">
+<div align="center">
   <img alt="Static Badge NixOS" src="https://img.shields.io/badge/UNSTABLE-f3e9d8?style=for-the-badge&logo=nixos&logoColor=f3e9d8&logoSize=auto&label=NIXOS&labelColor=2A2732&color=2A2732">
   <img alt="Static Badge WIP" src="https://img.shields.io/badge/WIP-2A2732?style=for-the-badge">
   <br>
   <img alt="Static Badge GNOME" src="https://img.shields.io/badge/GNOME-CD5700?style=for-the-badge&logo=gnome&logoColor=242424&logoSize=auto&color=F3E9D8"> 
   <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/HYPRLAND-CD5700?style=for-the-badge&logo=hyprland&logoColor=242424&logoSize=auto&color=F3E9D8">
-  <img alt="Static Badge Hyprland" src="https://img.shields.io/badge/COSMIC-CD5700?style=for-the-badge&logo=system76&logoColor=242424&logoSize=auto&color=F3E9D8">  
-
+  <!-- <img alt="Static Badge COSMIC" src="https://img.shields.io/badge/COSMIC-CD5700?style=for-the-badge&logo=system76&logoColor=242424&logoSize=auto&color=F3E9D8">   -->
+</div>
 
 <!-- Main -->
 
@@ -110,7 +110,7 @@ My system is intended to be portable and adaptable, supporting multiple users or
 ```
 
 Both `nixos` and `home-manager` are independent, dividing home from system environment; however, they need
-some shared metadata to function. You can find those in the `data` directory, and even change some attributes
+some shared metadata to function. You can find those in the `data/` directory, and even change some attributes
 for your own usage.
 
 The `data/` directory is used in both system and home configurations. I use it to solve a very specific problem: **Sharing data between two independent** `flakes` **without bounding them.**
@@ -162,10 +162,6 @@ All the visual identity of my setup comes from `home-manager` + `stylix`. You ca
 </table>
 
 ### Hyprland (WIP)
-
-...
-
-### COSMIC (WIP)
 
 ...
 

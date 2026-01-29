@@ -17,7 +17,7 @@
   # However, you can still use the Flatpak version of Steam.
   cfg = config.custom.steam;
 in {
-  options.custom.steam.enable = lib.mkEnableOption "Install and configure steam"; 
+  options.custom.steam.enable = lib.mkEnableOption "Install and configure steam";
 
   config = lib.mkIf cfg.enable {
     # Enable gamemode daemon.

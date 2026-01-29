@@ -10,9 +10,9 @@
         margin-left = 10;
         margin-right = 10;
 
-        modules-left = [ "hyprland/workspaces" "hyprland/window" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "pulseaudio" "network" "battery" "tray" ];
+        modules-left = ["hyprland/workspaces" "hyprland/window"];
+        modules-center = ["clock"];
+        modules-right = ["pulseaudio" "network" "battery" "tray"];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -29,7 +29,7 @@
           format = "{icon} {volume}%";
           format-muted = "󰝟 Muted";
           format-icons = {
-            default = [ "󰕿" "󰖀" "󰕾" ];
+            default = ["󰕿" "󰖀" "󰕾"];
           };
           on-click = "pavucontrol";
         };
@@ -40,7 +40,7 @@
             critical = 15;
           };
           format = "{icon} {capacity}%";
-          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         };
 
         "network" = {

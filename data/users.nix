@@ -8,6 +8,6 @@ let
     desktop = "gnome"; # all lowercase
   };
   # alice = rec { ... };
-in{
+in {
   current = kaio;
 }

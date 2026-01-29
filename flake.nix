@@ -12,7 +12,10 @@
     # I was hearing horrible musics.
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs = {
+    self,
+    nixpkgs,
+  }: {
     # ...
   };
 }
