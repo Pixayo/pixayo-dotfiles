@@ -72,6 +72,8 @@ experience using NixOS and, hopefully, serve as a source of information for othe
   </tbody>
 </table>
 
+> **NOTE**: I'm stepping away from Nix for now. It was a great learning experience; however, I'm tired of all the dev stuff that comes along with it. As a result, some information in this repository may become outdated.
+
 ## Content
 
 My system is intended to be portable and adaptable, supporting multiple users or just a single one. Many configurations are split into their own modules, which can be easily decoupled, overridden, or removed, while also providing a foundation for expansion and the creation of new modules.
